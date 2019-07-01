@@ -17,9 +17,9 @@ SEXP c_write_gmt(SEXP list, SEXP filename) {
   for(R_len_t i=0; i<length(list); i++) 
     {
       gmtItem = VECTOR_ELT(list, i);
-      if(length(gmtItem)!=3)
+      if(length(gmtItem)<3)
 	{
-	  error("Invalid GMT format: each GMT-list item must have 3 elements: name, description and genes\n");
+	  error("Invalid GMT format: each GMT-list item must have at least 3 elements: name, description and genes\n");
 	}
       fputs(STRING_VALUE(VECTOR_ELT(gmtItem, 0)),f);
       fputs("\t", f);

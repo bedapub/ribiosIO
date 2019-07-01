@@ -1,6 +1,6 @@
 write_gmt <- function(gmt, file, description=NULL) {
-  isGeneList <- all(sapply(gmt,function(x) class(x)!="list"))
-  isGmtList <- all(sapply(gmt, function(x) class(x)=="list" & length(x)==3))
+  isGeneList <- all(sapply(gmt, function(x) class(x)!="list"))
+  isGmtList <- all(sapply(gmt, function(x) is.list(x) & length(x)>=3))
   if(isGeneList) {
     gsets <- names(gmt)
     if(length(description)!=length(gmt))
