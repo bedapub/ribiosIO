@@ -1,6 +1,6 @@
 #' Format a string list into a data.frame
 #'
-#' @param strList A list of character strings
+#' @param strList A list of character strings. Other data types (e.g. factors) are converted to strings.
 #' @param colnames Column names of the resulting data.frame, by default the names of the list
 #' @param index Logical value, whether the row.names attribute of the data.frame should be integer indexes
 #'
@@ -9,10 +9,17 @@
 #' strList2DataFrame(myList)
 #' strList2DataFrame(myList, colnames=c("FirstColumn", "SecondColumn"))
 #' strList2DataFrame(myList, colnames=c("FirstColumn", "SecondColumn"), index=TRUE)
-
+#' 
+#' myFacList <- list("A"=gl(2,3, labels=LETTERS[1:2]), 
+#'     "B"=gl(3,4, labels=LETTERS[1:3]))
+#' strList2DataFrame(myFacList)
 strList2DataFrame <- function(strList, colnames=names(strList), index=FALSE) {
   maxlen <- max(sapply(strList, length))
-  flist <- lapply(strList, function(x) c(x, rep("", maxlen-length(x))))
+  flist <- lapply(strList, function(x) {
+    x <- as.character(x)
+    res <- c(x, rep("", maxlen-length(x)))
+    return(res)
+  })
   tbl <- do.call(cbind,flist)
   colnames(tbl) <- colnames
   if(index) {

@@ -7,7 +7,7 @@
 strList2DataFrame(strList, colnames = names(strList), index = FALSE)
 }
 \arguments{
-\item{strList}{A list of character strings}
+\item{strList}{A list of character strings. Other data types (e.g. factors) are converted to strings.}
 
 \item{colnames}{Column names of the resulting data.frame, by default the names of the list}
 
@@ -21,4 +21,8 @@ myList <- list("A"=LETTERS[3:5], "B"=LETTERS[4])
 strList2DataFrame(myList)
 strList2DataFrame(myList, colnames=c("FirstColumn", "SecondColumn"))
 strList2DataFrame(myList, colnames=c("FirstColumn", "SecondColumn"), index=TRUE)
+
+myFacList <- list("A"=gl(2,3, labels=LETTERS[1:2]), 
+    "B"=gl(3,4, labels=LETTERS[1:3]))
+strList2DataFrame(myFacList)
 }
