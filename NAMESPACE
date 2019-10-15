@@ -1,5 +1,5 @@
 importFrom("utils", "read.csv", "read.table", "write.table")
-importFrom("ribiosUtils", "trim", "matchColumn")
+importFrom("ribiosUtils", "trim", "matchColumn", "longdf2matrix")
 importFrom("methods", "is")
 
 export(read_gmt_list,
@@ -57,5 +57,7 @@ export(read_david)
 export(loadRDS)
 
 export(read_illumina_sampleSheet)
+
+export(gctMatrix2longdf, longdf2gctMatrix)
 
 useDynLib(ribiosIO, .registration=TRUE)
