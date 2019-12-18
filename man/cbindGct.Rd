@@ -4,8 +4,12 @@
 \alias{cbindGct}
 \title{Column bind (cbind) two GctMatrix objects}
 \usage{
-cbindGct(gctMatrix1, gctMatrix2, feature = c("union", "intersection"),
-  missingValue = 0)
+cbindGct(
+  gctMatrix1,
+  gctMatrix2,
+  feature = c("union", "intersection"),
+  missingValue = 0
+)
 }
 \arguments{
 \item{gctMatrix1}{The first object}

@@ -4,8 +4,13 @@
 \alias{writeStrList}
 \title{Write a list of strings in a tab-delimited file}
 \usage{
-writeStrList(list, file, names = NULL, type = c("column", "row"),
-  index = FALSE)
+writeStrList(
+  list,
+  file,
+  names = NULL,
+  type = c("column", "row"),
+  index = FALSE
+)
 }
 \arguments{
 \item{list}{A list of character strings}

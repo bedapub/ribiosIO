@@ -4,8 +4,14 @@
 \alias{longdf2gctMatrix}
 \title{Convert a long data.frame into a GctMatrix}
 \usage{
-longdf2gctMatrix(longdf, row.col = 1L, desc.col = 2, column.col = 3,
-  value.col = 4, missingValue = NULL)
+longdf2gctMatrix(
+  longdf,
+  row.col = 1L,
+  desc.col = 2,
+  column.col = 3,
+  value.col = 4,
+  missingValue = NULL
+)
 }
 \arguments{
 \item{longdf}{A data.frame object}

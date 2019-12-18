@@ -27,6 +27,6 @@ myText <- paste("[Header]",
   "1,1,Sample1",
   "1,2,Sample2",
   "2,3,Sample3",
-  "2,4,Sample4", sep="\\n")
+  "2,4,Sample4", sep="\n")
 read_illumina_sampleSheet(textConnection(myText))
 }

@@ -17,7 +17,7 @@ read_trimmed_lines(file, skipNul = TRUE, ...)
 Read lines, thereby trimming empty spaces around the strings and removing empty lines
 }
 \examples{
-lines <- "  ABC \\n\\tHBV\\n\\nFCB  \\n\\n"
+lines <- "  ABC \n\tHBV\n\nFCB  \n\n"
 trimmedLines <- read_trimmed_lines(textConnection(lines))
 stopifnot(identical(trimmedLines, c("ABC", "HBV", "FCB")))
 }
