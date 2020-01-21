@@ -1,5 +1,6 @@
 #' Read the Data block of Illumina sample sheet as data.frame
 #' @param file An Illumina SampleSheet, with one Data block
+#' @param sep Character, separator between columns, comma by default
 #' @return A \code{data.frame} of the data block
 #' 
 #' @examples 
@@ -16,12 +17,12 @@
 #'   "2,3,Sample3",
 #'   "2,4,Sample4", sep="\n")
 #' read_illumina_sampleSheet(textConnection(myText))
-read_illumina_sampleSheet <- function(file) {
+read_illumina_sampleSheet <- function(file, sep=",") {
   lines <- readLines(file)
   dataBlock <- grep("^\\[Data\\]", lines)
   if(length(dataBlock)==0)
     stop("No data block found")
-  res <- read.csv(textConnection(lines), header=TRUE, sep=",", 
+  res <- read.csv(textConnection(lines), header=TRUE, sep=sep, 
                   quote="", dec=".", row.names=NULL, 
                   stringsAsFactors = FALSE,
                   skip=dataBlock)
