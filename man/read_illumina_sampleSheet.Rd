@@ -4,10 +4,12 @@
 \alias{read_illumina_sampleSheet}
 \title{Read the Data block of Illumina sample sheet as data.frame}
 \usage{
-read_illumina_sampleSheet(file)
+read_illumina_sampleSheet(file, sep = ",")
 }
 \arguments{
 \item{file}{An Illumina SampleSheet, with one Data block}
+
+\item{sep}{Character, separator between columns, comma by default}
 }
 \value{
 A \code{data.frame} of the data block
