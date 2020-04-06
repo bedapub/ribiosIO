@@ -55,7 +55,7 @@ read_exprs_matrix <- function(x) {
     stop(paste(x, "does not exist\n"))
   x.con <- readLines(con=x, n=3L, warn=FALSE)
   if(grepl("^\\#1\\.[2|3]", x.con[1L])) { ## gct format
-      mat <- .Call(C_read_gct, x, NULL, keep.desc=TRUE);
+      mat <- .Call(C_c_read_gct, x, NULL, keep.desc=TRUE);
       return(mat)
   } else {
       sep <- ifelse(any(grepl("\t", x.con)), "\t", "")

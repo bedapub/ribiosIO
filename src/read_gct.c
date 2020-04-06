@@ -6,8 +6,8 @@
 
 #include "ribios_io.h"
 
-// read_gct can read from either a file or a character string
-SEXP read_gct(SEXP filename, SEXP pchr, SEXP keepdesc) {
+// c_read_gct can read from either a file or a character string
+SEXP c_read_gct(SEXP filename, SEXP pchr, SEXP keepdesc) {
   LineStream ls;
   char* line;
 

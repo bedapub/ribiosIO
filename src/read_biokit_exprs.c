@@ -7,7 +7,7 @@
 
 #include "ribios_io.h"
 
-SEXP read_biokit_exprs (SEXP filename) {
+SEXP c_read_biokit_exprs (SEXP filename) {
   LineStream ls;
   char* line;
   const int MAND_NCOL=7; // the first column is the row name, and column 2-7 are mandatory
