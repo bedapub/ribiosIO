@@ -23,3 +23,4 @@ devtools::install_github("bedapub/ribiosIO")
 1. Now the source files (`.h` and `.c`) are copied from `ribiosUtils` version 1.5-9, because to export all functions from `ribiosUtils` can be laborious.
     1. Solution 1: we export functions little by little
     2. Solution 2: we stay with the redundancy
+    3. Solution 3: we move the C-level function to ribiosUtils, and import these functions (likely the easiest option to implement).
