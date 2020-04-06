@@ -26,6 +26,7 @@
     dissecting strings of the form dbname:seqname)
 */
 #include <ctype.h>
+#include <stdint.h>
 #include "hlrmisc.h"
 #include "log.h"
 #include "format.h"
@@ -381,8 +382,8 @@ static int computeResultLength (const char *format,va_list args) {
       isPercent = (isPercent) ? 0 : 1;
     else if (isPercent) {
       // handle one conversion specification e.g. %20.10s, %5.2f, etc
-      long width = 0;
-      long prec = 0;
+      intptr_t width = 0;
+      intptr_t prec = 0;
       int dot = 0; // flag for dot found
       int asteriskCnt = 0; // flag/counter for value substitution by '*'
       long int intConv = 0;
@@ -426,16 +427,16 @@ static int computeResultLength (const char *format,va_list args) {
             arg = va_arg (args,char *);
           if (asteriskCnt > 0) {
             if (asteriskCnt == 2) {
-              width = (long)arg;
+              width = (intptr_t)arg;
               arg = va_arg (args,char *);
-              prec = (long)arg;
+              prec = (intptr_t)arg;
               arg = va_arg (args,char *);
             }
             else if (asteriskCnt == 1) {
               if (dot)
-                prec = (long)arg;
+                prec = (intptr_t)arg;
               else
-                width = (long)arg;
+                width = (intptr_t)arg;
               arg = va_arg (args,char *);
             }
             else
@@ -513,7 +514,7 @@ int stringPrintf (Stringa str,const char *format,...) {
   va_start (args,format);
   maxlength = computeResultLength (format,args);
   va_end (args);
-  array (str,maxlength + 1,char); // allocate space
+  array (str,maxlength + 1,char) = '\0'; // allocate space
   va_start (args,format);
   resultLen = vsprintf (string (str),format,args);
   va_end (args);
@@ -536,7 +537,7 @@ int stringAppendf (Stringa str,const char *format,...) {
   va_start (args,format);
   maxlength = computeResultLength (format,args);
   va_end (args);
-  array (str,len + maxlength + 1,char); // allocate space
+  array (str,len + maxlength + 1,char) = '\0'; // allocate space
   va_start (args,format);
   resultLen = vsprintf (string (str)+len,format,args);
   va_end (args);
@@ -569,7 +570,7 @@ char *stringPrintBuf (const char *format,...) {
   va_start (args,format);
   maxlength = computeResultLength (format,args);
   va_end (args);
-  array (str,maxlength + 1,char); // allocate space
+  array (str,maxlength + 1,char) = '\0'; // allocate space
   va_start (args,format);
   resultLen = vsprintf (string (str),format,args);
   va_end (args);
@@ -925,8 +926,8 @@ Texta textFillG (int width,int widthOffset1,char *s,char *splitControl) {
   char *spos; // look back position
   char c;
   int altSplitFound; // 1, if one of the splitControl found
-  char *ws_begin; // whitespace begin
-  char *ws_end;
+  char *ws_begin = NULL; // whitespace begin
+  char *ws_end = NULL;
   Texta res; // result array
   char *line; // start of current line in s
   int ws = 0; // true, if last char was a whitespace, else false
@@ -1291,7 +1292,7 @@ int getLine (FILE *stream,char **buffer,int *buflen) {
       *buflen = *buflen + GETLINE_INC;
       buffree += GETLINE_INC;
       *buffer = (char *)realloc (*buffer,*buflen);
-      if (*buffer == '\0')
+      if (**buffer == '\0')
         die ("getLine: realloc");
       bufp = *buffer + (bufp - startp); // adjust to new location
       startp = *buffer;

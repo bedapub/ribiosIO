@@ -1,1 +1,1 @@
-PKG_CFLAGS=-I../inst/include
+PKG_CFLAGS=-I../inst/include -I../inst/include/bios_headers
