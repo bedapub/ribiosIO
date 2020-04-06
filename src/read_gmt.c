@@ -14,7 +14,7 @@ SEXP c_read_gmt(SEXP filename) {
   const char* fn=CHAR(STRING_ELT(filename, 0));
   char* fname=strdup(fn);
 
-  Texta it;
+  Texta it = NULL;
   Texta names = textCreate(10);
   Texta descs = textCreate(10);
   Array genes = arrayCreate(10, Texta);
