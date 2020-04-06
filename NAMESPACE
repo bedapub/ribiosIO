@@ -7,6 +7,7 @@ export(read_gmt_list,
 
 export(read_exprs_matrix)
 export(iofile,
+       getDataDir, setDataDir,
        loadFile)
 
 export(loadObject)
