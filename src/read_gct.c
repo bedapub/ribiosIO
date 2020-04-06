@@ -11,14 +11,18 @@ SEXP c_read_gct(SEXP filename, SEXP pchr, SEXP keepdesc) {
   LineStream ls;
   char* line;
 
-  int ind=0;
-  int nrow, ncol;
+  int ind = 0;
+  int nrow = 0;
+  int ncol = 0;
   int i;
   Texta it;
-  double *pmat;
+  double *pmat = NULL;
   char *gctsource;
-  SEXP rownames, colnames, desc, dimnames;
-  SEXP ans;
+  SEXP rownames = NULL;
+  SEXP colnames = NULL;
+  SEXP desc = NULL;
+  SEXP dimnames = NULL;
+  SEXP ans = NULL;
   // TODO: change char* to const char*? tmp should never be modified
   char* tmp;
   Stringa err=stringCreate(100);
