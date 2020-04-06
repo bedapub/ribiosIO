@@ -18,7 +18,7 @@ SEXP c_read_gct(SEXP filename, SEXP pchr, SEXP keepdesc) {
   double *pmat;
   char *gctsource;
   SEXP rownames, colnames, desc, dimnames;
-  SEXP ans,res;
+  SEXP ans;
   // TODO: change char* to const char*? tmp should never be modified
   char* tmp;
   Stringa err=stringCreate(100);
