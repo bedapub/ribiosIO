@@ -35,6 +35,7 @@ gctDesc <- function(gctMatrix, index) {
 
 #' Coerce a GctMatrix object into a matrix
 #' @param x A GctMatrix object
+#' @param ... Not used
 #' @return A matrix with a \code{desc} attribute
 #' 
 #' @examples 
