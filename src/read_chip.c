@@ -12,7 +12,7 @@ SEXP c_read_chip(SEXP filename) {
   Texta it;
   char* line;
   char* fn=strdup(CHAR(STRING_ELT(filename,0)));
-  int ncol, ncolFirst, nrow;
+  int ncolFirst, nrow;
   int i;
   int lcnt=0;
   char err[100];
