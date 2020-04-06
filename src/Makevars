@@ -1,16 +1,1 @@
-## Following files were copied from ribiosBase package to src
-# src/array.c
-# src/array.h
-# src/format.c
-# src/format.h
-# src/hlrmisc.c
-# src/hlrmisc.h
-# src/linestream.c
-# src/linestream.h
-# src/log.c
-# src/log.h
-# src/plabla.c
-# src/plabla.h
-# src/plabla_conf.h
-
-## now these source codes are duplicated in multiple ribios packages. What to do?
+PKG_CFLAGS=-I../inst/include
