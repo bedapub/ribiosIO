@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{A GctMatrix object}
+
+\item{...}{Not used}
 }
 \value{
 A matrix with a \code{desc} attribute
