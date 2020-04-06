@@ -1,7 +1,9 @@
 #include <math.h>
-#include "log.h"
-#include "format.h"
-#include "linestream.h"
+
+// @importFrom ribiosUtils textCreate, arrayCreate, ls_createFromFile, ls_nextLine
+// @importFrom ribiosUtils textFieldtokP, arrayMax, textAdd, array, textCreateClear
+// @importFrom ribiosUtils arrayMax, testAdd, textItem, array, arrayMax, textClone
+// @importFrom ribiosUtils stringPrintf, textDestroy, stringDestroy, ls_destroy
 
 #include "ribios_io.h"
 
