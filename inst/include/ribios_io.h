@@ -1,9 +1,13 @@
 #ifndef RIBIOS_IO_H
 #define RIBIOS_IO_H
 
-#include <Rinternals.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define CALLMETHOD_DEF(fun, numArgs) {#fun, (DL_FUNC) &(fun), (numArgs)}
+#include <Rinternals.h>
+#include <R.h>
+#include <R_ext/Rdynload.h>  
 
 // public functions
 SEXP c_read_gct (SEXP filename, SEXP pchr, SEXP keepdesc);
@@ -14,5 +18,9 @@ SEXP c_read_biokit_exprs (SEXP filename);
 
 // common macros
 #define max(a,b) (((a)>(b))?(a):(b))
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
