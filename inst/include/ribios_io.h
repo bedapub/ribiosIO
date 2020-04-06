@@ -10,11 +10,11 @@ extern "C" {
 #include <R_ext/Rdynload.h>  
 
 // public functions
-SEXP c_read_gct (SEXP filename, SEXP pchr, SEXP keepdesc);
-SEXP c_read_gmt (SEXP filename);
-SEXP c_write_gmt (SEXP list, SEXP filename);
-SEXP c_read_chip (SEXP filename);
-SEXP c_read_biokit_exprs (SEXP filename);
+SEXP read_gct (SEXP filename, SEXP pchr, SEXP keepdesc);
+SEXP read_gmt (SEXP filename);
+SEXP write_gmt (SEXP list, SEXP filename);
+SEXP read_chip (SEXP filename);
+SEXP read_biokit_exprs (SEXP filename);
 
 // common macros
 #define max(a,b) (((a)>(b))?(a):(b))

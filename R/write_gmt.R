@@ -17,5 +17,5 @@ write_gmt <- function(gmt, file, description=NULL) {
       stop("'file' must be a string of file name")
   }
   file <- path.expand(file)
-  invisible(.Call("c_write_gmt", gout, file))
+  invisible(.Call(C_write_gmt, gout, file))
 }

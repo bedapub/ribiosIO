@@ -31,6 +31,6 @@
 #' biokitExprs <- read_biokit_exprs(biokitExampleFile)
 read_biokit_exprs <- function(filename) {
   filename <- checkfile(filename)
-  res <- .Call("c_read_biokit_exprs", filename)
+  res <- .Call(C_read_biokit_exprs, filename)
   return(res)
 }

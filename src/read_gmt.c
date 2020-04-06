@@ -5,7 +5,7 @@
 
 #include "ribios_io.h"
 
-SEXP c_read_gmt(SEXP filename) {
+SEXP read_gmt(SEXP filename) {
   LineStream ls;
   char* line;
   SEXP res, item, glist, lname, rname;
