@@ -1,15 +1,24 @@
+getDataDir <- function() {
+  return(options("ribiosIO")$ribiosIO$dataDir)
+}
+
+setDataDir <- function(path) {
+  options("ribiosIO"=list(dataDir=path))
+}
+
 iofile <- function(x) {
-  if(!exists("DATA_DIR", inherits=TRUE)) {
+  dataDir <- getDataDir()
+  if(is.null(dataDir)) {
     if (file.exists("./data")) {
-      warning("DATA_DIR defined as ./data\n")
-      assign("DATA_DIR", "./data", envir=.GlobalEnv)
+      message("DATA_DIR defined as ./data\n")
+      setDataDir("./data")
     } else {
-      stop("DATA_DIR not defined, or ./data does not exist \n")
+      stop("DATA_DIR not defined, or ./data does not exist. Call 'setDataDir' first.\n")
     }
   }
   if(missing(x)) {
-    get("DATA_DIR")
+    return(dataDir)
   } else {
-    file.path(get("DATA_DIR"), x)
+    file.path(dataDir, x)
   }
 }
