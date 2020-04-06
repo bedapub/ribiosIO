@@ -60,4 +60,4 @@ export(read_illumina_sampleSheet)
 
 export(gctMatrix2longdf, longdf2gctMatrix)
 
-useDynLib(ribiosIO, .registration=TRUE)
+useDynLib(ribiosIO, .registration=TRUE, .fixes="C_")
