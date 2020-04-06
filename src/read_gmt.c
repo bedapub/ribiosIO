@@ -21,7 +21,7 @@ SEXP c_read_gmt(SEXP filename) {
   
   //allocate list vector
   ls=ls_createFromFile(fname);
-  while(line=ls_nextLine(ls)) {
+  while((line=ls_nextLine(ls))) {
     it=textStrtok(line, "\t");
     if(arrayMax(it)<2) continue;
     textAdd(names, textItem(it, 0));

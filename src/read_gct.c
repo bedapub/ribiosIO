@@ -43,7 +43,7 @@ SEXP c_read_gct(SEXP filename, SEXP pchr, SEXP keepdesc) {
     ls = ls_createFromBuffer(gctsource);
   }
   
-  while(line = ls_nextLine(ls)) {
+  while((line = ls_nextLine(ls))) {
     if(line[0] == '#')
       continue;
 

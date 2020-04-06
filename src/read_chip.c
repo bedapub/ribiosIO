@@ -31,7 +31,7 @@ SEXP c_read_chip(SEXP filename) {
   Texta symbols=textCreate(100);
   Texta names=textCreate(100);
 		       
-  while(line = ls_nextLine(ls)) {
+  while((line = ls_nextLine(ls))) {
     it = textFieldtokP(line, "\t");
     if(arrayMax(it) != ncolFirst) {
       sprintf(err, "Line %d has %d columns, while the first line has %d. Exist",

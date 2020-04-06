@@ -35,7 +35,7 @@ SEXP c_read_biokit_exprs (SEXP filename) {
   ls = ls_createFromFile(strdup(fn));
 
   ls_nextLine(ls); // skip the first header line
-  while(line = ls_nextLine(ls)) {
+  while((line = ls_nextLine(ls))) {
     it = textFieldtokP(line, "\t");
     if(arrayMax(it)<MAND_NCOL)
       error("Input file must contain no less than %d columns", MAND_NCOL);
