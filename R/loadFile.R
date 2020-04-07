@@ -1,9 +1,28 @@
-#' Load a RData file and returns a logical flag
+#' Attempt to load a binary RData file
 #' 
-#' @param rDataFile Character string, name of the RData file to be loaded
-#' @param env Environment, where the data should be read into
+#' The function attempts to load a binary file, returning \code{TRUE} if
+#' succeeded. Otherwise it returns \code{FALSE}.
 #' 
-#' @return Logical, \code{TRUE} if the file loading was successful, otherwise \code{FALSE}
+#' 
+#' @param rDataFile Character, RData file name
+#' @param env Environment, where should be the RData loaded into. By default it
+#' is loaded into the global environment.
+#' @return The function is used for its side effects.
+#' @author Jitao David Zhang <jitao_david.zhang@@roche.com>
+#' @seealso \code{\link{iofile}} can be used to find file from input data
+#' directory.
+#' @examples
+#' 
+#' \dontrun{
+#' rf <- tempfile()
+#' myData <- c(3,4,5)
+#' save(myData, file=rf)
+#' if(!loadFile(rf)) {
+#' stop("Something went wrong\n")
+#' }
+#' }
+#' 
+#' @export loadFile
 loadFile <- function (rDataFile, env = globalenv()) {
     if (file.exists(rDataFile)) {
         load(rDataFile, env)
@@ -35,6 +54,7 @@ loadObject <- function(file, obj=NULL, verbose=FALSE) {
 #' @param refhook Logical, passed to \code{\link[base]{readRDS}}
 #' 
 #' @return Logical, \code{TRUE} if the file loading was successful, otherwise \code{FALSE}
+#' @export
 loadRDS <- function(rdsFile, variableName, refhook=NULL) {
   variableName <- as.character(substitute(variableName))
   if(file.exists(rdsFile)) {

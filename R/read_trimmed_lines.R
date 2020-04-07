@@ -7,6 +7,7 @@
 #' lines <- "  ABC \n\tHBV\n\nFCB  \n\n"
 #' trimmedLines <- read_trimmed_lines(textConnection(lines))
 #' stopifnot(identical(trimmedLines, c("ABC", "HBV", "FCB")))
+#' @export
 read_trimmed_lines <- function(file, skipNul=TRUE, ...) {
     lines <- readLines(file, skipNul=skipNul, ...)
     lines <- trim(lines)

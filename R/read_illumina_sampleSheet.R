@@ -17,6 +17,7 @@
 #'   "2,3,Sample3",
 #'   "2,4,Sample4", sep="\n")
 #' read_illumina_sampleSheet(textConnection(myText))
+#' @export
 read_illumina_sampleSheet <- function(file, sep=",") {
   lines <- readLines(file)
   dataBlock <- grep("^\\[Data\\]", lines)

@@ -6,6 +6,8 @@
 \title{Read in a factor writtin in the CLS format}
 \usage{
 read_factor(con = stdin(), offset = 0)
+
+read_cls(con = stdin(), offset = 0)
 }
 \arguments{
 \item{con}{File or connection to read file from}

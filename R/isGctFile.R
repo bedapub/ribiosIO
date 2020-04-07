@@ -22,6 +22,7 @@
 #' isGctFile(myInFile)
 #' myInfileLS <- system.file("extdata/test_lessStrict.gct", package="ribiosIO")
 #' isGctFile(myInfileLS)
+#' @export
 isGctFile <- function(file, strict.column.names=FALSE) {
   headers <- readLines(file, n=3)
   isFL <- grepl("^#1.2", headers[[1]])

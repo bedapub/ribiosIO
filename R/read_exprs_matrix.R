@@ -48,7 +48,7 @@
 #'
 #' ## import tab-separated file with non-numeric values
 #' read_exprs_matrix(file.path(testfile.path, "test_nonnumbers.txt"))
-
+#' @export
 read_exprs_matrix <- function(x) {
   x <- path.expand(x)
   if(!file.exists(x))

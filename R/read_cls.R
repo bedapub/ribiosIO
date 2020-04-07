@@ -21,6 +21,7 @@
 #' write_factor(tempfac, tempfile)
 #' readLines(tempfile)
 #' stopifnot(identical(tempfac, read_factor(tempfile)))
+#' @export
 write_factor <- function(fac, con=stdout(),offset=0, sep=c("\t", " ")) {
     stopifnot(is.factor(fac))
     sep <- match.arg(sep)
@@ -33,6 +34,8 @@ write_factor <- function(fac, con=stdout(),offset=0, sep=c("\t", " ")) {
     writeLines(res, con=con)
 }
 
+#' @rdname write_factor
+#' @export
 write_cls <- write_factor
 
 #' Read in a factor writtin in the CLS format
@@ -67,6 +70,7 @@ write_cls <- write_factor
 #' levels=c("Case", "Control"))
 #' stopifnot(identical(sample.cls, expFac))
 #' 
+#' @export
 read_factor <- function(con=stdin(), offset=0) {
     lns <- readLines(con)
     stopifnot(length(lns) == 3)
@@ -88,6 +92,8 @@ read_factor <- function(con=stdin(), offset=0) {
     return(sf)
 }
 
+#' @rdname read_factor
+#' @export
 read_cls <- read_factor
 
 #' Check if a file encodes a factor
@@ -104,6 +110,7 @@ read_cls <- read_factor
 #' is_factor_file(tempfile)
 #' write_factor(tempfac, tempfile, sep=" ")
 #' is_factor_file(tempfile)
+#' @export
 is_factor_file <- function(con=stdin()) {
     lns <- readLines(con)
     if(length(lns)!=3)
@@ -118,4 +125,7 @@ is_factor_file <- function(con=stdin()) {
     }
     return(TRUE)
 }
+
+#' @rdname is_factor_file
+#' @export
 is_cls_file <- is_factor_file

@@ -6,6 +6,8 @@
 \title{Write a factor in the CLS format}
 \usage{
 write_factor(fac, con = stdout(), offset = 0, sep = c("\\t", " "))
+
+write_cls(fac, con = stdout(), offset = 0, sep = c("\\t", " "))
 }
 \arguments{
 \item{fac}{A factor}

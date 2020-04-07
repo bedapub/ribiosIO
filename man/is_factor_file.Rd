@@ -6,6 +6,8 @@
 \title{Check if a file encodes a factor}
 \usage{
 is_factor_file(con = stdin())
+
+is_cls_file(con = stdin())
 }
 \arguments{
 \item{con}{Connection from which to read the file}

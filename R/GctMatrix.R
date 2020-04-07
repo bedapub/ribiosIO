@@ -9,6 +9,7 @@
 #' gm2 <- GctMatrix(m2, desc=sprintf("Gene%d", 3:1))
 #' print(gm1)
 #' print(gm2)
+#' @export
 GctMatrix <- function(matrix, desc) {
   if(!missing(desc))
     stopifnot(length(desc)==nrow(matrix))
@@ -26,6 +27,7 @@ GctMatrix <- function(matrix, desc) {
 #' gm1 <- GctMatrix(m1, desc=sprintf("Gene%d", 1:3))
 #' gctDesc(gm1)
 #' gctDesc(gm1, 1:2)
+#' @export
 gctDesc <- function(gctMatrix, index) {
   res <- attr(gctMatrix, "desc")
   if(!missing(index))
@@ -43,6 +45,7 @@ gctDesc <- function(gctMatrix, index) {
 #' gm1 <- GctMatrix(m1, desc=sprintf("Gene%d", 1:3))
 #' print(gm1)
 #' print(as.matrix(gm1))
+#' @export
 as.matrix.GctMatrix <- function(x, ...) {
   class(x) <- "matrix"
   return(x)
@@ -61,6 +64,7 @@ as.matrix.GctMatrix <- function(x, ...) {
 #' gmBig <- GctMatrix(mBig, desc=sprintf("Gene%d", 1:100))
 #' gmBig
 #' \dontrun{print(gmBig, showAll=TRUE)}
+#' @export
 print.GctMatrix <- function(x, showAll=FALSE, ...) {
   cat(sprintf("A GctMatrix with %d features and %d samples.\n",
               nrow(x), ncol(x)))
@@ -104,6 +108,7 @@ print.GctMatrix <- function(x, showAll=FALSE, ...) {
 #' gm1[1:3,2:1]
 #' gm1[1,]
 #' gm1[,-1]
+#' @export
 `[.GctMatrix` <- function(x, i, j, ...) {
   resMat <- NextMethod(`[`, drop=FALSE)
   attr(resMat, "desc") <- attr(x, "desc")[i]
@@ -137,6 +142,7 @@ print.GctMatrix <- function(x, showAll=FALSE, ...) {
 #' print(gm123Union, showAll=TRUE)
 #' gm123UnionNA <- cbindGct(gm12, gm3, feature="union", missingValue = NA)
 #' print(gm123UnionNA)
+#' @export
 cbindGct <- function(gctMatrix1, gctMatrix2, 
                      feature=c("union", "intersection"),
                      missingValue=0) {

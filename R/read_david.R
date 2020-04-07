@@ -4,6 +4,7 @@
 #' @examples
 #' davidFile <- system.file("extdata/example-DAVID-output-subset.txt", package="ribiosIO")
 #' davidResult <- read_david(davidFile)
+#' @export
 read_david <- function(file) {
   lines <- readLines(file, skipNul=TRUE)
   lines <- lines[lines!=""]

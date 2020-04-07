@@ -29,6 +29,7 @@
 #' biokitExampleFile <- system.file("extdata/biokit_expression_files/biokit-output-1.expression",
 #' package="ribiosIO")
 #' biokitExprs <- read_biokit_exprs(biokitExampleFile)
+#' @export
 read_biokit_exprs <- function(filename) {
   filename <- checkfile(filename)
   res <- .Call(C_c_read_biokit_exprs, filename)

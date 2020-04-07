@@ -1,3 +1,36 @@
+#' Find and read-in AmpliSeq files
+#' 
+#' Find and read-in AmpliSeq files into an expression matrix
+#' 
+#' Directory is recursively checked for files that match the name pattern
+#' \sQuote{*.cov.xls} (cov means coverage). Invalid links (judged by file size)
+#' are excluded.
+#' 
+#' Only data of total read counts are read-in.
+#' 
+#' @aliases find_ampliseq read_ampliseq find_and_read_ampliseq
+#' @param dir The top-level directory where a AmpliSeq run is saved. An
+#' example:
+#' \sQuote{/data64/sequencing/iontorrent_data/Auto_user_PR1-139-AmpliSeqRNA_pathway_FD14_277_360/}
+#' @param files AmpliSeq files, potentially found by \code{find_ampliseq}
+#' @return \code{find_ampliseq} returns a character vector of full names of
+#' valid files.
+#' 
+#' \code{read_ampliseq} returns a numeric matrix of gene expression in counts.
+#' Row names are unique gene names.
+#' 
+#' \code{find_and_read_ampliseq} combines the two functions and returns the
+#' expression matrix as \code{read_ampliseq} does.
+#' @author Jitao David Zhang <jitao_david.zhang@@roche.com>
+#' @examples
+#' 
+#' ampdir <- system.file("extdata/ampliseq-data", package="ribiosIO")
+#' ampfiles <- find_ampliseq(ampdir)
+#' ampmat <- read_ampliseq(ampfiles)
+#' 
+#' ampmat.onestep <- find_and_read_ampliseq(ampdir)
+#' 
+#' @export find_ampliseq
 find_ampliseq <- function(dir) {
   files <- dir(dir, pattern="*.cov.xls", full.names=TRUE, recursive=TRUE)
   finfo <- file.info(files)
@@ -5,6 +38,8 @@ find_ampliseq <- function(dir) {
   files[isValid]
 }
 
+#' @rdname find_ampliseq
+#' @export
 read_ampliseq <- function(files) {
   tbls <- lapply(files, function(x) {
     tbl <- read.table(x, sep="\t", header=TRUE)
@@ -20,6 +55,8 @@ read_ampliseq <- function(files) {
   return(ntbls)
 }
 
+#' @rdname find_ampliseq
+#' @export
 find_and_read_ampliseq <- function(dir) {
   files <- find_ampliseq(dir)
   read_ampliseq(files)
@@ -42,6 +79,7 @@ find_and_read_ampliseq <- function(dir) {
 #'  "NM_000927\t2520\t2624\tAMPL5599607\t0\t+\t.\tGENE_ID=ABCB1","\n",
 #'  "NM_000443\t1367\t1470\tAMPL5513474\t0\t+\t.\tGENE_ID=ABCB4")
 #'  read_ampliseq_amplicons(textConnection(lines))
+#' @export
 read_ampliseq_amplicons <- function(bedFile) {
   ampliconsRaw <- read.table(bedFile)
   amplicons <- data.frame(Amplicon=ampliconsRaw$V4,
@@ -75,6 +113,7 @@ read_ampliseq_amplicons <- function(bedFile) {
 #'  "ABCA1\tNM_005502\t202\t303\t404", "\n",
 #'  "ABCB1\tNM_000927\t312\t416\t520")
 #'  read_ampliseq_bedcovgct(textConnection(gctLines), textConnection(bedlines))
+#' @export
 read_ampliseq_bedcovgct <- function(file,
                                      bedFile) {
   amplicons <- read_ampliseq_amplicons(bedFile)

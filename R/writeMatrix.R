@@ -14,6 +14,7 @@
 #' @examples
 #' test.mat <- matrix(rnorm(1000), nrow=10)
 #' writeMatrix(test.mat, tempfile())
+#' @export
 writeMatrix <- function(x, file, row.names=TRUE) {
   write.table(x, file=file, quote=FALSE, sep="\t",
               row.names=row.names,
@@ -40,7 +41,7 @@ writeMatrix <- function(x, file, row.names=TRUE) {
 #' writeMatrix(test.mat, tmpfile)
 #' readin.mat <- readMatrix(tmpfile)
 #' if(require(ribiosUtils)) identicalMatrix(test.mat, readin.mat)
-
+#' @export
 readMatrix <- function(file, row.names=TRUE, as.matrix=TRUE, ...) {
   if(!row.names) {
     row.names <- NULL
@@ -77,7 +78,7 @@ readMatrix <- function(file, row.names=TRUE, as.matrix=TRUE, ...) {
 #' readin.df <- readTable(tmpfile)
 #' stopifnot(identical(as.character(readin.df$Team), c("HSV", "BVB", "VFB")))
 #' stopifnot(identical(readin.df$Score, c(21L, 19L, 17L)))
-
+#' @export
 readTable <- function(file, row.names=TRUE, ...) {
     return(readMatrix(file, row.names=row.names, as.matrix=FALSE, ...))
 }

@@ -13,6 +13,7 @@
 #' myFacList <- list("A"=gl(2,3, labels=LETTERS[1:2]), 
 #'     "B"=gl(3,4, labels=LETTERS[1:3]))
 #' strList2DataFrame(myFacList)
+#' @export
 strList2DataFrame <- function(strList, colnames=names(strList), index=FALSE) {
   maxlen <- max(sapply(strList, length))
   flist <- lapply(strList, function(x) {
@@ -45,6 +46,7 @@ strList2DataFrame <- function(strList, colnames=names(strList), index=FALSE) {
 #' writeStrList(myList, file=stdout(), names=c("ListA", "ListB"), type="row")
 #' writeStrList(myList, file=stdout(), names=c("ListA", "ListB"), type="row", index=TRUE)
 #' writeStrList(myList, file=stdout(), names=c("ListA", "ListB"), type="column", index=TRUE)
+#' @export
 writeStrList <- function(list, file, names=NULL, type=c("column", "row"), index=FALSE) {
   type <- match.arg(type)
   if(is.null(names))
