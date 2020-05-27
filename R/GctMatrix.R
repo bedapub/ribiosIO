@@ -111,6 +111,7 @@ print.GctMatrix <- function(x, showAll=FALSE, ...) {
 #' gm1[1:3,2:1]
 #' gm1[1,]
 #' gm1[,-1]
+#' @importFrom utils head
 #' @export
 `[.GctMatrix` <- function(x, i, j, ...) {
   resMat <- NextMethod(`[`, drop = FALSE)
@@ -122,7 +123,7 @@ print.GctMatrix <- function(x, showAll=FALSE, ...) {
       ind <- match(i, rownames(x))
       if (any(is.na(ind)))
         stop("Some row names not found:",
-             paste(i[head(is.na(ind))], collapse = ","))
+             paste(i[utils::head(is.na(ind))], collapse = ","))
       attr(resMat, "desc") <- attr(x, "desc")[ind]
     }
   }
