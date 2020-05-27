@@ -97,21 +97,35 @@ print.GctMatrix <- function(x, showAll=FALSE, ...) {
 
 #' Subsetting for GctMatrix
 #' @param x A GctMatrix object
-#' @param i Index to subset rows
-#' @param j Index to subset columns
+#' @param i Index to subset rows, either integers, logical values, or characters.
+#'   Other types will be converted to characters.
+#' @param j Index to subset columns.
 #' @param ... Other parameters passed to matrix subsetting
 #' 
 #' @examples 
 #' m1 <- matrix(1:6, nrow=3, dimnames=list(sprintf("G%d", 1:3), sprintf("S%d", 1:2)))
 #' gm1 <- GctMatrix(m1, desc=sprintf("Gene%d", 1:3))
 #' gm1[1:2,]
+#' gm1[c(TRUE, FALSE, TRUE),]
+#' gm1[c("G3", "G1"),]
 #' gm1[1:3,2:1]
 #' gm1[1,]
 #' gm1[,-1]
 #' @export
 `[.GctMatrix` <- function(x, i, j, ...) {
-  resMat <- NextMethod(`[`, drop=FALSE)
-  attr(resMat, "desc") <- attr(x, "desc")[i]
+  resMat <- NextMethod(`[`, drop = FALSE)
+  if (!missing(i)) {
+    if (is.numeric(i) || is.logical(i)) {
+      attr(resMat, "desc") <- attr(x, "desc")[i]
+    } else {
+      i <- as.character(i)
+      ind <- match(i, rownames(x))
+      if (any(is.na(ind)))
+        stop("Some row names not found:",
+             paste(i[head(is.na(ind))], collapse = ","))
+      attr(resMat, "desc") <- attr(x, "desc")[ind]
+    }
+  }
   class(resMat) <- c("GctMatrix", "matrix")
   return(resMat)
 }
