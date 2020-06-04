@@ -1,8 +1,8 @@
 Package: ribiosIO
 Type: Package
 Title: Input/Output utilities of the ribios suite
-Version: 1.0-58
-Date: 2020-05-27
+Version: 1.0-59
+Date: 2020-06-04
 Authors@R: 
   person(given = "Jitao David",
          family = "Zhang",

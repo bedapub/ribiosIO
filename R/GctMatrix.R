@@ -126,6 +126,8 @@ print.GctMatrix <- function(x, showAll=FALSE, ...) {
              paste(i[utils::head(is.na(ind))], collapse = ","))
       attr(resMat, "desc") <- attr(x, "desc")[ind]
     }
+  } else {
+    attr(resMat, "desc") <- attr(x, "desc")
   }
   class(resMat) <- c("GctMatrix", "matrix")
   return(resMat)
