@@ -1,8 +1,8 @@
 Package: ribiosIO
 Type: Package
 Title: Input/Output utilities of the ribios suite
-Version: 1.0-59
-Date: 2020-06-04
+Version: 1.0-60
+Date: 2020-07-15
 Authors@R: 
   person(given = "Jitao David",
          family = "Zhang",
@@ -18,6 +18,33 @@ Depends:
 Imports:
     ribiosUtils (>= 1.5.9),
     methods
+Suggests:
+    testthat
 License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
+Collate: 
+    'GctMatrix.R'
+    'ampliseq.R'
+    'checkfile.R'
+    'iofile.R'
+    'isGctFile.R'
+    'loadFile.R'
+    'read_biokit_exprs.R'
+    'read_chip.R'
+    'read_cls.R'
+    'read_david.R'
+    'read_exprs_matrix.R'
+    'read_fasta.R'
+    'read_gct.R'
+    'read_gmt_list.R'
+    'read_illumina_sampleSheet.R'
+    'read_pheno.R'
+    'read_trimmed_lines.R'
+    'ribiosIO.R'
+    'write.tableList.R'
+    'writeMatrix.R'
+    'writeMatrix.tableList.R'
+    'writeStrList.R'
+    'write_gct.R'
+    'write_gmt.R'
