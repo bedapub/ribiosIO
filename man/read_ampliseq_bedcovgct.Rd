@@ -9,7 +9,7 @@ read_ampliseq_bedcovgct(file, bedFile)
 \arguments{
 \item{file}{Character string, a GCT file containing bedcov output of amplicons}
 
-\item{bedFile}{Character string, a BED file encoding amplicons}
+\item{bedFile}{Character string, an annotated BED file encoding amplicons}
 }
 \value{
 A \code{GctMatrix} object containing read counts
@@ -24,15 +24,20 @@ bedlines <- paste0("#track type=bedDetail ionVersion=4.0 name=\"IAD50039-4_IAD87
  "solution_type=4 description=\"TargetRegions_AmpliSeqID_IAD50039 AmpliSeq_Version=3.0.1",
  " Workflow=RNA merged with TargetRegions_AmpliSeqID_IAD87652 AmpliSeq_Version=4.48 Workflow=RNA\"",
  " color=77,175,74 priority=2", "\n",
- "NM_000014\t3316\t3421\tAMPL1384\t0\t+\t.\tGENE_ID=A2M", "\n",
- "NM_005502\t2488\t2589\tAMPL28385508\t0\t+\t.\tGENE_ID=ABCA1","\n",
- "NM_000927\t2520\t2624\tAMPL5599607\t0\t+\t.\tGENE_ID=ABCB1","\n",
- "NM_000443\t1367\t1470\tAMPL5513474\t0\t+\t.\tGENE_ID=ABCB4")
+ "NM_000014\t3316\t3421\tAMPL1384\t.\tGENE_ID=A2M;EntrezGeneID=2", "\n",
+ "NM_005502\t2488\t2589\tAMPL28385508\t.\tGENE_ID=ABCA1;EntrezGeneID=19","\n",
+ "NM_000927\t2520\t2624\tAMPL5599607\t.\tGENE_ID=ABCB1;EntrezGeneID=5243","\n",
+ "NM_000443\t1367\t1470\tAMPL5513474\t.\tGENE_ID=ABCB4;EntrezGeneID=5244")
  gctLines <- paste0("#1.2", "\n",
  "3\t3","\n",
  "NAME\tDescription\tS1\tS2\tS3","\n",
  "A2M\tNM_000014\t105\t210\t315", "\n",
  "ABCA1\tNM_005502\t202\t303\t404", "\n",
  "ABCB1\tNM_000927\t312\t416\t520")
- read_ampliseq_bedcovgct(textConnection(gctLines), textConnection(bedlines))
+ bedcovGct <- read_ampliseq_bedcovgct(textConnection(gctLines), 
+   textConnection(bedlines))
+ bedcovGct
+}
+\seealso{
+\code{\link{read_annotated_ampliseq_amplicons}}
 }
