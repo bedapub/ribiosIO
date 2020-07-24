@@ -30,6 +30,7 @@ Collate:
     'iofile.R'
     'isGctFile.R'
     'loadFile.R'
+    'read_bed.R'
     'read_biokit_exprs.R'
     'read_chip.R'
     'read_cls.R'
