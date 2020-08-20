@@ -92,9 +92,14 @@ find_and_read_ampliseq <- function(dir) {
 #' @export
 read_annotated_ampliseq_amplicons <- function(bedFile) {
   ampliconsRaw <- read_bed(bedFile)
-  v6 <- as.character(ampliconsRaw[,6])
-  gs <- sub("GENE_ID=", "", sapply(strsplit(v6, ";"), "[[", 1L))
-  egids <- sub("EntrezGeneID=", "", sapply(strsplit(v6, ";"), "[[", 2L))
+
+  vlast <- as.character(ampliconsRaw[,ncol(ampliconsRaw)])
+  gs <- sub("GENE_ID=", "", sapply(strsplit(vlast, ";"), "[[", 1L))
+  if(any(grepl("EntrezGeneID=", vlast))) {
+    egids <- sub("EntrezGeneID=", "", sapply(strsplit(vlast, ";"), "[[", 2L))
+  } else {
+    egids <- rep(NA, nrow(ampliconsRaw))
+  }
   anno <- data.frame(Amplicon=ampliconsRaw[,4L],
                      GeneID=egids,
                      GeneSymbol=gs,

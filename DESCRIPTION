@@ -1,17 +1,17 @@
 Package: ribiosIO
 Type: Package
 Title: Input/Output utilities of the ribios suite
-Version: 1.0-61
-Date: 2020-07-24
-Authors@R: 
+Version: 1.0-62
+Date: 2020-08-19
+Authors@R:
   person(given = "Jitao David",
          family = "Zhang",
          role = c("aut", "cre", "ctb"),
          email = "jitao_david.zhang@roche.com",
          comment = c(ORCID="0000-0002-3085-0909"))
 Description: Provides basic data structures and functions for file input/output
-   in the ribios software suite. In this package, only the basic data 
-   structures (vectors, lists and matrices) are allowed, in order to 
+   in the ribios software suite. In this package, only the basic data
+   structures (vectors, lists and matrices) are allowed, in order to
    ensure fast loading and high performance.
 Depends:
     utils
