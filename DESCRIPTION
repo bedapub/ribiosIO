@@ -49,3 +49,5 @@ Collate:
     'writeStrList.R'
     'write_gct.R'
     'write_gmt.R'
+Remotes:
+    github::bedapub/ribiosUtils
