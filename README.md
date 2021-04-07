@@ -1,6 +1,8 @@
 *ribiosIO*: File input/output module of the ribios suite
 ===
 
+![R-CMD-check badge](https://github.com/bedapub/ribiosIO/workflows/R-CMD-check/badge.svg)
+
 ## What is *ribiosIO*?
 
 *ribiosIO* is a R package that file input/output operations with high performance and low latency.
