@@ -16,16 +16,17 @@ testgmt <- file.path(testfile.path, "test.gmt")
 testgmt.list <- read_gmt_list(testgmt)
 
 ## import tab-separated file (without/with colname for the first column)
-assertIdentical <- function(x,y) stopifnot(identical(x,y))
-assertIdentical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix.tsv")),
-                input.matrix)
-assertIdentical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix_full.tsv")),
-                input.matrix)
+test_that("import tab-separated file", {
+    expect_identical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix.tsv")),
+                    input.matrix)
+    expect_identical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix_full.tsv")),
+                    input.matrix)
+})
 
 ## import space-separated file (without/with colname for the first column)
-assertIdentical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix.txt")),
+expect_identical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix.txt")),
                 input.matrix)
-assertIdentical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix.txt")),
+expect_identical(read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix.txt")),
                 input.matrix)
 
 ## import txt/gct files with duplicate colnames
@@ -50,13 +51,24 @@ assertRoundIdentical(dup.mat,
 assertRoundIdentical(dup.mat,
                      read_exprs_matrix(file.path(testfile.path, "test_read_exprs_matrix_full_duprownames.txt")))
 
-## non-numeric values
-nonnum <- read_exprs_matrix(file.path(testfile.path, "test_nonnumbers.txt"))
-nonnumExp <- matrix(c(1,2,3,
+nonnumGct <- read_exprs_matrix(file.path(testfile.path, "test_nonnumbers.gct"))
+nonnumGctExp <- matrix(c(1,2,3,
+                      2,3,4,
+                      4,6,1,
+                      5,3,2,
+                      5,3,1,
+                      1,NA,2),nrow=6, byrow=TRUE,
+                    dimnames=list(sprintf("Gene%d", 1:6), sprintf("Sample%d", 1:3)))
+attr(nonnumGctExp, "desc") <- sprintf("G%d", 1:6)
+expect_identical(nonnumGct, nonnumGctExp)
+
+nonnumTxt <- read_exprs_matrix(file.path(testfile.path, "test_nonnumbers.txt"))
+nonnumTxtExp <- matrix(c(1,2,3,
                       2,3,4,
                       4,6,1,
                       5,3,2,
                       5,NA,1,
                       1,NA,2),nrow=6, byrow=TRUE,
                     dimnames=list(sprintf("Gene%d", 1:6), sprintf("Sample%d", 1:3)))
-stopifnot(identical(nonnum, nonnumExp))
+attr(nonnumTxtExp, "desc") <- sprintf("G%d", 1:6)
+expect_identical(nonnumTxt, nonnumTxtExp)

@@ -1,3 +1,36 @@
+#' Supress warning optionally
+#' @param expr R expression
+#' @param supress Logical, whether or not to suppress warnings
+#' @return side effect is used
+optional_suppress_warning <- function(expr, suppress=TRUE) {
+    if (suppress) {
+        warnFunc <- function(w) {
+                     if (inherits(w, "warning"))  tryInvokeRestart("muffleWarning")
+        }
+    } else {
+        warnFunc <- function(w) warning(w)
+    }
+    withCallingHandlers(expr, warning = warnFunc)
+}
+
+#' Transform a data.frame to a numeric matrix without characters coereced as factors
+#' @param df A data.frame
+#' @param warning Logical, whether the function should warn when non-numeric
+#' characters are transformed
+#' @return A numeric matrix
+as_numeric_matrix <- function(df, warning=FALSE) {
+    col_classes <- apply(df, 2, class)
+    char_cols <- col_classes %in% "character"
+    if(any(char_cols)) {
+      for (column in seq(along=char_cols)[char_cols]) {
+          df[, column] <- optional_suppress_warning(as.numeric(df[, column]),
+                                              suppress=!warning)
+      }
+    }
+    mat <- data.matrix(df)
+    return(mat)
+}
+
 #' Read an expression matrix from file
 #'
 #' @description
@@ -62,11 +95,11 @@ read_exprs_matrix <- function(x) {
       df <- read.table(x, sep=sep, row.names=NULL, header=TRUE,
                        check.names=FALSE, stringsAsFactors=FALSE, comment.char="")      
       if(is.integer(df[,2L]) || is.numeric(df[,2L]))  { ## second column is numeric
-          mat <- data.matrix(df[,-1L,drop=FALSE])
+          mat <- as_numeric_matrix(df[,-1L,drop=FALSE])
           colnames(mat) <- colnames(df)[c(-1L)]
           rownames(mat) <- df[,1L]
       } else { ## second column is not numeric
-          mat <- data.matrix(df[, c(-1L, -2L),drop=FALSE])
+          mat <- as_numeric_matrix(df[, c(-1L, -2L),drop=FALSE])
           rownames(mat) <- df[,1L]
           colnames(mat) <- colnames(df)[c(-1L, -2L)]
           attr(mat, "desc") <- as.character(df[,2L])
