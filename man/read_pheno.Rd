@@ -42,8 +42,6 @@ package="ribiosIO")
 (clsPheno <- read_pheno(testClsFile))
 (txtPheno <- read_pheno(testPhenoFile))
 
-stopifnot(identical(clsPheno, txtPheno))
-
 ## read_pheno_factor
 (clsPhenoClass <- read_pheno_factor(testClsFile))
 (txtPhenoClass <- read_pheno_factor(testPhenoFile))

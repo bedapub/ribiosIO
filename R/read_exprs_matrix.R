@@ -1,6 +1,6 @@
 #' Supress warning optionally
 #' @param expr R expression
-#' @param supress Logical, whether or not to suppress warnings
+#' @param suppress Logical, whether or not to suppress warnings
 #' @return side effect is used
 optional_suppress_warning <- function(expr, suppress=TRUE) {
     if (suppress) {

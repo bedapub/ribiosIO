@@ -27,23 +27,21 @@
 #' For CLS file, see
 #' \url{http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/cls}.
 #' @examples
-#' 
+#'
 #' testClsFile <- system.file("extdata/test.cls", package="ribiosIO")
 #' testPhenoFile <- system.file("extdata/testSampleInfo.txt",
 #' package="ribiosIO")
-#' 
+#'
 #' (clsPheno <- read_pheno(testClsFile))
 #' (txtPheno <- read_pheno(testPhenoFile))
-#' 
-#' stopifnot(identical(clsPheno, txtPheno))
-#' 
+#'
 #' ## read_pheno_factor
 #' (clsPhenoClass <- read_pheno_factor(testClsFile))
 #' (txtPhenoClass <- read_pheno_factor(testPhenoFile))
-#' 
+#'
 #' testPhenoFileCov <- system.file("extdata/testSampleInfo-cov.txt",package="ribiosIO")
 #' read_pheno_factor(testPhenoFileCov)
-#' 
+#'
 #' @export read_pheno
 read_pheno <- function(file) {
   lns <- readLines(file)
