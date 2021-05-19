@@ -93,7 +93,8 @@ read_exprs_matrix <- function(x) {
   } else {
       sep <- ifelse(any(grepl("\t", x.con)), "\t", "")
       df <- read.table(x, sep=sep, row.names=NULL, header=TRUE,
-                       check.names=FALSE, stringsAsFactors=FALSE, comment.char="")      
+                       check.names=FALSE, stringsAsFactors=FALSE, 
+                       quote="\"", comment.char="")      
       if(is.integer(df[,2L]) || is.numeric(df[,2L]))  { ## second column is numeric
           mat <- as_numeric_matrix(df[,-1L,drop=FALSE])
           colnames(mat) <- colnames(df)[c(-1L)]
