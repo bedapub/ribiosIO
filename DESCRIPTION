@@ -1,8 +1,8 @@
 Package: ribiosIO
 Type: Package
 Title: Input/Output utilities of the ribios suite
-Version: 1.0-64
-Date: 2021-05-19
+Version: 1.0-65
+Date: 2022-01-04
 Authors@R:
   person(given = "Jitao David",
          family = "Zhang",
@@ -22,7 +22,7 @@ Suggests:
     testthat
 License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Collate: 
     'GctMatrix.R'
     'ampliseq.R'
@@ -38,7 +38,7 @@ Collate:
     'read_exprs_matrix.R'
     'read_fasta.R'
     'read_gct.R'
-    'read_gmt_list.R'
+    'read_gmt.R'
     'read_illumina_sampleSheet.R'
     'read_pheno.R'
     'read_trimmed_lines.R'
