@@ -47,6 +47,28 @@ loadObject <- function(file, obj=NULL, verbose=FALSE) {
   get(obj, env)
 }
 
+
+#' Load objects from a RData file and return them in an environment
+#' @param file A RData file
+#' @param obj Character string(s), optional object names. If set as \code{NULL}, all objects are returned
+#' @param verbose Whether the loading process should be verbose, see \code{\link{load}}
+#'
+#' @export
+loadObjectInEnv <- function(file, obj=NULL, verbose=FALSE) {
+  env <- new.env()
+  load(file, env, verbose = verbose)
+  if(!is.null(obj)) {
+    eobj <- ls(envir=env)
+    fobj <- intersect(obj, eobj)
+    nfobj <- setdiff(obj, eobj)
+    if(length(nfobj)>0)
+        warning("Following objects not found:", paste(nfobj, collapse=","))
+    rm(list=nfobj, envir=env)
+  }
+  return(env)
+}
+
+
 #' Load an object from a RDS file and returns a logical flag
 #' 
 #' @param rdsFile Character string, name of the rds file to be loaded
