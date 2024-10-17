@@ -36,7 +36,7 @@ SEXP c_read_chip(SEXP filename) {
     if(arrayMax(it) != ncolFirst) {
       sprintf(err, "Line %d has %d columns, while the first line has %d. Exist",
 	      lcnt+2, arrayMax(it), ncolFirst);
-      error(err);
+      error("%s", err);
       return R_NilValue;
     }
     // note that textAdd duplicates the assigned string internally

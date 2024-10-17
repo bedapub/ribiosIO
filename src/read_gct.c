@@ -67,7 +67,7 @@ SEXP c_read_gct(SEXP filename, SEXP pchr, SEXP keepdesc) {
 	stringPrintf(err,
 		     "Sample number differs from the specification in the 2nd line (%d), and sample names in the 3rd line (%d)",
 		     ncol,arrayMax(it)-2);
-	error(string(err));
+	error("%s", string(err));
 	stringDestroy(err);
       }
       for(i=0; i<arrayMax(it)-2;i++)
@@ -103,7 +103,7 @@ SEXP c_read_gct(SEXP filename, SEXP pchr, SEXP keepdesc) {
 		 nrow, ind-2);
     char* errmsg=hlr_strdup(string(err));
     stringDestroy(err);
-    error(errmsg);
+    error("%s", errmsg);
   }
 
   PROTECT(dimnames = allocVector(VECSXP, 2));
