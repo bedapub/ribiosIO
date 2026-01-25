@@ -51,11 +51,9 @@ read_pheno_factor(testPhenoFileCov)
 
 }
 \references{
-For tab-delimited file (sample information file), see
-\url{http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/sample-information-file}.
-
-For CLS file, see
-\url{http://www.broadinstitute.org/cancer/software/genepattern/gp_guides/file-formats/sections/cls}.
+For CLS and sample information file formats, see the GenePattern
+file formats documentation at
+\url{https://software.broadinstitute.org/cancer/software/genepattern/file-formats-guide}.
 }
 \seealso{
 \code{\link{read_cls}} and \code{\link{read.csv}}.

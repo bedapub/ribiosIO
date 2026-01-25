@@ -15,7 +15,7 @@
 #' }
 #'
 #' @return A logical value: \code{TRUE} means \code{file} is of the GCT format.
-#' @references \url{http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#GCT}
+#' @references \url{https://software.broadinstitute.org/cancer/software/genepattern/file-formats-guide}
 #' @seealso \code{\link{read_gct_matrix}} to read in GCT files
 #' @examples
 #' myInFile <- system.file("extdata/test.gct", package="ribiosIO")

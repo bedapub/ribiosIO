@@ -8,3 +8,4 @@ symbols.rds
 .Rhistory
 .Rproj.user
 *.sw[o|p]
+*.tar.gz

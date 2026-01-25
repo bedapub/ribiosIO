@@ -34,7 +34,7 @@ SEXP c_read_chip(SEXP filename) {
   while((line = ls_nextLine(ls))) {
     it = textFieldtokP(line, "\t");
     if(arrayMax(it) != ncolFirst) {
-      sprintf(err, "Line %d has %d columns, while the first line has %d. Exist",
+      snprintf(err, sizeof(err), "Line %d has %d columns, while the first line has %d. Exist",
 	      lcnt+2, arrayMax(it), ncolFirst);
       error("%s", err);
       return R_NilValue;

@@ -30,11 +30,9 @@ read GCT file into a matrix.
 The function \code{read_gctstr_matrix} calls the C rountine as well, to
 parse a character string in the GCT file format into a matrix.
 
-Normal R users should consider using the \code{readGct} function in the
-\code{ribiosExpression} package. While \code{read_gct_matrix} reads in GCT
-into matrix, which is a basic data structure of \code{R}, the \code{readGct}
-function calls \code{read_gct_matrix} and fill the matrix into an
-\code{ExpressionSet} object.
+This function reads GCT files into a matrix, which is a basic data structure
+of R. For integration with Bioconductor's ExpressionSet objects, consider
+using the ribiosExpression package (available on GitHub).
 }
 \examples{
 
@@ -49,8 +47,7 @@ teststr.mat <- read_gctstr_matrix(sample.gct.string, keep.desc=TRUE)
 
 }
 \seealso{
-\link[ribiosExpression]{readGct} in the \code{ribiosExpression}
-package.
+\code{\link{isGctFile}} to test if a file is in GCT format.
 }
 \author{
 Jitao David Zhang <jitao_david.zhang@roche.com>

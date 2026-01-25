@@ -2,8 +2,26 @@
 % Please edit documentation in R/ribiosIO.R
 \docType{package}
 \name{ribiosIO-package}
+\alias{ribiosIO}
 \alias{ribiosIO-package}
 \title{High-performance file input/output with ribios}
 \description{
 Provides high-performance file input/output for computational biology tasks
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/bedapub/ribiosIO}
+  \item Report bugs at \url{https://github.com/bedapub/ribiosIO/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Jitao David Zhang \email{jitao_david.zhang@roche.com} (\href{https://orcid.org/0000-0002-3085-0909}{ORCID}) [contributor]
+
+Other contributors:
+\itemize{
+  \item F.Hoffmann-La Roche AG [copyright holder]
+}
+
 }

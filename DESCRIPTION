@@ -1,29 +1,33 @@
 Package: ribiosIO
 Type: Package
-Title: Input/Output utilities of the ribios suite
-Version: 1.0-68
-Date: 2024-10-17
+Title: Input/Output Utilities of the Ribios Suite
+Version: 1.1.0
+Date: 2026-01-24
 Authors@R:
-  person(given = "Jitao David",
-         family = "Zhang",
-         role = c("aut", "cre", "ctb"),
-         email = "jitao_david.zhang@roche.com",
-         comment = c(ORCID="0000-0002-3085-0909"))
-Description: Provides basic data structures and functions for file input/output
-   in the ribios software suite. In this package, only the basic data
-   structures (vectors, lists and matrices) are allowed, in order to
-   ensure fast loading and high performance.
+  c(person(given = "Jitao David",
+           family = "Zhang",
+           role = c("aut", "cre", "ctb"),
+           email = "jitao_david.zhang@roche.com",
+           comment = c(ORCID="0000-0002-3085-0909")),
+    person("F.Hoffmann-La Roche AG", role="cph"))
+Description: Provides data structures and functions for file input/output
+    in the ribios software suite. Supports common bioinformatics file formats
+    including GCT, GMT, CLS, CHIP, BED, and FASTA files. Designed for fast
+    loading and high performance with minimal dependencies.
 Depends:
-    utils
+    R (>= 3.4.0)
 Imports:
-    ribiosUtils (>= 1.5.9),
-    methods
+    ribiosUtils,
+    methods,
+    utils
 Suggests:
     testthat
 License: GPL-3
+URL: https://github.com/bedapub/ribiosIO
+BugReports: https://github.com/bedapub/ribiosIO/issues
 Encoding: UTF-8
-RoxygenNote: 7.1.2
-Collate: 
+RoxygenNote: 7.3.3
+Collate:
     'GctMatrix.R'
     'ampliseq.R'
     'checkfile.R'
@@ -49,5 +53,3 @@ Collate:
     'writeStrList.R'
     'write_gct.R'
     'write_gmt.R'
-Remotes:
-    github::bedapub/ribiosUtils

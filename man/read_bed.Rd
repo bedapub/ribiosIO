@@ -31,7 +31,7 @@ lines <- paste0("#track type=bedDetail ionVersion=4.0 name=\"IAD50039-4_IAD87652
 }
 \references{
 Definition of BED files can be found at 
-  \url{https://m.ensembl.org/info/website/upload/bed.html}.
+  \url{https://www.ensembl.org/info/website/upload/bed.html}.
 }
 \seealso{
 \code{\link{read.table}}

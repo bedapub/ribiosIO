@@ -35,7 +35,7 @@ myInfileLS <- system.file("extdata/test_lessStrict.gct", package="ribiosIO")
 isGctFile(myInfileLS)
 }
 \references{
-\url{http://www.broadinstitute.org/cancer/software/genepattern/file-formats-guide#GCT}
+\url{https://software.broadinstitute.org/cancer/software/genepattern/file-formats-guide}
 }
 \seealso{
 \code{\link{read_gct_matrix}} to read in GCT files

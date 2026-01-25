@@ -34,7 +34,7 @@ larger flexibility of parsing CHIP-like files.
 }
 \references{
 BROAD institute GSEA manual, available at
-\url{http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#CHIP:_Chip_file_format_.28.2A.chip.29}.
+\url{https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats}.
 }
 \author{
 Jitao David Zhang <jitao_david.zhang@roche.com>
