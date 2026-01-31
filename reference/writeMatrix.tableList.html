@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ribiosIO</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0-68</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0</span>
       </span>
     </div>
 
@@ -25,7 +25,13 @@
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/bedapub/ribiosIO/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -35,7 +41,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Write a list of data.frames (tables) into file with writeMatrix</h1>
-
+    <small class="dont-index">Source: <a href="https://github.com/bedapub/ribiosIO/blob/master/R/writeMatrix.tableList.R" class="external-link"><code>R/writeMatrix.tableList.R</code></a></small>
     <div class="hidden name"><code>writeMatrix.tableList.Rd</code></div>
     </div>
 
@@ -93,15 +99,15 @@ unnamed column of the output files</p></dd>
 <span class="r-in"><span><span class="va">dflist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>file1<span class="op">=</span><span class="va">df1</span>, file2<span class="op">=</span><span class="va">df2</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">writeMatrix.tableList</span><span class="op">(</span><span class="va">dflist</span><span class="op">)</span> <span class="co">## two files, file1 and file2, are written</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "downlit"          "file1"            "file2"            "file2fcb211cfb00"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file2fcb28c20e94" "file2fcb2b3e1eec" "file2fcb4b11ba5b" "file2fcb4f1749d0"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file2fcb5b6777a2" "file2fcb7ca1e45b" "file2fcbc960b32" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "downlit"          "file1"            "file2"            "file4b53363dae7b"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file4b5341c820d5" "file4b53442a79fe" "file4b535a0348ba" "file4b536a99825a"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file4b536fb45567" "file4b5370d1e141" "file4b537db50c49"</span>
 <span class="r-in"><span><span class="fu">writeMatrix.tableList</span><span class="op">(</span><span class="va">dflist</span>, file.names<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"file1.txt"</span>, <span class="st">"file2.txt"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "downlit"          "file1"            "file1.txt"        "file2"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file2.txt"        "file2fcb211cfb00" "file2fcb28c20e94" "file2fcb2b3e1eec"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file2fcb4b11ba5b" "file2fcb4f1749d0" "file2fcb5b6777a2" "file2fcb7ca1e45b"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "file2fcbc960b32" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file2.txt"        "file4b53363dae7b" "file4b5341c820d5" "file4b53442a79fe"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file4b535a0348ba" "file4b536a99825a" "file4b536fb45567" "file4b5370d1e141"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "file4b537db50c49"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">setwd</a></span><span class="op">(</span><span class="va">cwd</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

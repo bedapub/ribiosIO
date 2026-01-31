@@ -18,7 +18,7 @@ read GCT file into a matrix."><!-- mathjax --><script src="https://cdnjs.cloudfl
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ribiosIO</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0-68</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0</span>
       </span>
     </div>
 
@@ -26,7 +26,13 @@ read GCT file into a matrix."><!-- mathjax --><script src="https://cdnjs.cloudfl
       <ul class="nav navbar-nav"><li>
   <a href="../reference/index.html">Reference</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/bedapub/ribiosIO/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -36,7 +42,7 @@ read GCT file into a matrix."><!-- mathjax --><script src="https://cdnjs.cloudfl
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Calling C routine to read GCT file into a matrix</h1>
-
+    <small class="dont-index">Source: <a href="https://github.com/bedapub/ribiosIO/blob/master/R/read_gct.R" class="external-link"><code>R/read_gct.R</code></a></small>
     <div class="hidden name"><code>read_gct_matrix.Rd</code></div>
     </div>
 
@@ -77,16 +83,13 @@ returned as an attribute of the matrix</p></dd>
     <h2>Details</h2>
     <p>The function <code>read_gctstr_matrix</code> calls the C rountine as well, to
 parse a character string in the GCT file format into a matrix.</p>
-<p>Normal R users should consider using the <code>readGct</code> function in the
-<code>ribiosExpression</code> package. While <code>read_gct_matrix</code> reads in GCT
-into matrix, which is a basic data structure of <code>R</code>, the <code>readGct</code>
-function calls <code>read_gct_matrix</code> and fill the matrix into an
-<code>ExpressionSet</code> object.</p>
+<p>This function reads GCT files into a matrix, which is a basic data structure
+of R. For integration with Bioconductor's ExpressionSet objects, consider
+using the ribiosExpression package (available on GitHub).</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p>readGct in the <code>ribiosExpression</code>
-package.</p></div>
+    <div class="dont-index"><p><code><a href="isGctFile.html">isGctFile</a></code> to test if a file is in GCT format.</p></div>
     </div>
     <div id="author">
     <h2>Author</h2>
