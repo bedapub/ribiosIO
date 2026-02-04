@@ -26,7 +26,7 @@ read_bed <- function(file, ...) {
   ribiosUtils::haltifnot(ncol(res)>=3,
                          msg="BED file must contain at least three columns")
   bedcols <- c("chrom", "chromStart", "chromEnd",
-               "name", "score", "strand", "thickStart", "thinkEnd", "itemRgb",
+               "name", "score", "strand", "thickStart", "thickEnd", "itemRgb",
                "blockCount", "blockSizes", "blockStarts")
   valInd <- 1:pmin(length(bedcols), ncol(res))
   colnames(res)[valInd] <- bedcols[valInd]
