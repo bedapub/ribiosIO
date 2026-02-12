@@ -73,6 +73,10 @@
 <dd><p>Paramters passed to the default method of <code>print</code></p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    <p>No return value, called for side effects (prints to console).</p>
+    </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
@@ -106,7 +110,130 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> -- Use `gctDesc` to fetch feature descriptions</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> -- Use `rownames` and `colnames` to fetch row and column names</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> -- All methods applicable to matrix can be used</span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">gmBig</span>, showAll<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co"># \dontrun{}</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">gmBig</span>, showAll<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A GctMatrix with 100 features and 10 samples.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          S1     S2     S3     S4     S5     S6     S7     S8     S9    S10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G1    0.331 -0.437  0.658 -2.413  0.929  0.555 -0.145  0.608 -1.039  0.266</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G2    2.457 -1.225 -0.095  1.200  1.137  2.338 -0.089 -1.118  1.116 -0.604</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G3   -0.009 -1.144  0.546 -0.167 -1.353 -0.535  1.075  2.486  1.336  0.053</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G4   -0.333  0.829 -0.335  0.997 -1.187  0.396  1.958 -1.803  0.834 -0.544</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G5   -0.525 -0.929  1.666  0.025  1.090 -1.284 -1.817 -0.253  1.246  0.771</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G6    0.740  1.336 -0.238 -1.090  0.228 -0.694 -0.788  1.258  0.651  0.949</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G7   -1.220 -0.027  0.430  1.449  0.272 -0.116  0.194 -0.220 -0.077  0.998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G8    1.046  0.432 -1.744 -0.159 -0.408 -2.775 -2.895 -0.583 -0.867  0.069</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G9    1.426  0.075  0.657  0.238 -0.789 -0.565  0.445  0.874  0.787  1.070</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G10  -1.581  0.679 -0.838 -0.677 -0.157  0.749  0.073  1.297  0.615  0.152</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G11  -0.487 -1.269 -0.113  0.514 -0.565 -0.203  0.405  0.951 -2.413 -0.026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G12   0.255  0.660 -1.887  0.613  0.312  0.402 -1.114  0.375  1.754  0.012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G13   0.214 -0.218 -0.525  0.535 -1.135 -0.145 -0.953  1.216 -1.187  0.695</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G14  -0.535  0.407 -0.904 -1.122  1.130 -0.291 -0.423 -1.738  1.007 -0.349</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G15   0.256  0.371 -0.997  0.147  0.198 -0.945 -1.340  0.912  0.465  1.003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G16   0.682  0.932  0.621 -1.090  1.046 -0.840 -0.745 -1.149  0.251 -0.815</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G17  -0.012 -0.040 -1.199 -0.277 -1.375 -0.783 -1.257  0.261  0.188  1.673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G18  -0.537 -0.268  0.173 -0.284  0.311 -0.271 -0.302  0.971  0.666 -0.787</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G19  -0.913 -1.240 -1.302 -1.249  0.161  1.410  0.559 -0.638 -0.089 -1.796</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G20  -0.120 -1.538  0.177 -0.143 -1.315 -1.175 -0.641 -0.594 -0.235  0.653</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G21  -0.603  1.384 -0.824 -0.964 -0.506 -1.134 -0.919 -0.312  0.712 -0.206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G22   0.714 -0.405 -0.124 -0.517 -1.680  0.696  1.001  0.903 -1.305 -0.862</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G23   0.618  0.874 -0.634  0.554 -0.605  1.293 -0.766  1.722 -0.271 -1.044</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G24   1.020  0.870 -0.079  0.314 -1.692 -1.200  0.241 -0.288 -1.067 -0.885</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G25  -0.385  0.244  0.074  0.537  0.728 -1.494  1.583  0.344  0.129  0.361</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G26  -1.012 -0.582  0.595 -0.124  0.118 -0.735 -0.517 -1.586 -0.552  0.797</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G27  -0.600  1.146 -0.297 -0.584 -0.270  1.475  0.451  0.772  0.967 -0.228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G28  -0.329  0.681  0.597  2.944  0.272  0.058  1.636  1.757 -0.681  2.659</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G29   0.561 -0.195  1.181  1.062  0.137  1.391 -0.301 -1.404  0.098  0.411</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G30  -0.167 -0.895  0.452  0.843  0.141 -0.083 -1.436 -0.619 -0.002  1.120</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G31  -1.070  0.435  0.472 -0.261 -2.658 -1.279  0.672 -0.652 -0.163  0.182</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G32   0.058  0.200 -0.650 -1.506 -0.231  1.711 -0.132  0.230 -0.697  0.977</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G33  -0.859  0.488 -0.073 -0.147  0.735  1.275  3.711  1.158  0.613  0.597</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G34  -0.986  0.306  0.096  1.873 -0.551 -0.257  0.143 -0.798 -0.258 -0.559</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G35   1.448  0.560  1.677 -0.162 -0.383 -0.863  0.031  0.606  1.003 -1.003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G36   0.101  1.441 -2.042 -0.231 -2.005  0.861 -0.556 -0.874  0.537  0.415</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G37  -1.151 -0.295  0.009  0.039 -1.275 -0.496  0.788  0.958 -0.231 -0.134</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G38  -0.278 -0.134  0.361  2.140  0.345  1.269  0.116  0.477  0.572 -0.543</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G39   0.761 -0.130  0.233 -0.046  1.082  2.547 -0.884 -0.566 -0.812  1.132</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G40   0.361  1.517 -0.605  0.648 -1.580 -0.506  1.053  1.403  0.568 -0.823</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G41   0.141 -0.132 -0.851 -0.027  0.461  1.587 -0.008  0.843  0.104 -1.197</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G42  -0.863 -1.005  0.825 -0.391 -0.931  0.476  1.509 -1.244 -1.302 -0.563</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G43  -1.766  0.431  1.006  1.490  0.388 -1.667 -0.327 -0.428 -1.224 -0.013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G44  -1.422 -0.106 -0.648 -1.384 -1.259 -0.950 -0.902 -0.080 -1.591  0.254</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G45   0.684  0.321  1.838 -1.787  1.109  0.742 -0.075  0.492  0.026  2.806</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G46  -0.471 -0.452 -2.569 -0.346  1.075 -0.151  0.182  0.723 -0.541 -0.099</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G47  -0.928  0.070  1.116 -0.177  1.297  2.832 -1.331 -0.561 -0.154  0.112</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G48   0.819  0.842  0.682 -0.808 -1.645  1.725 -0.384 -0.281 -1.762  1.028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G49   0.652 -1.787  0.327  1.275 -0.643  0.784  0.486  2.798  2.167  0.156</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G50  -1.125  0.313  1.205 -2.443 -0.655  1.070  1.624 -0.770 -0.013  0.425</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G51   0.478 -0.097  0.244 -0.482  1.632 -0.499  1.163  1.225  2.547  0.487</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G52  -1.458 -0.435 -0.888  1.634  0.751 -0.186 -1.810  0.466 -1.122 -0.786</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G53  -0.115  0.681 -0.947  0.881 -1.198  0.747  0.405  0.627  1.482  0.812</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G54   1.712  0.166 -0.472 -0.980  1.436 -0.370 -0.933  0.163 -0.178  0.957</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G55  -1.448  0.879  0.719  0.075 -0.389 -0.109  0.044 -1.666  1.123 -1.172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G56  -1.156  1.216  0.981  0.494 -0.840 -2.121  0.570  0.556 -1.428  0.654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G57   0.699  1.360  0.212  0.292  1.070 -0.753  0.377  0.392  0.935 -0.245</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G58  -2.269  0.707 -0.558 -0.961  0.516 -1.114 -2.144  1.650  0.063  0.596</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G59   1.881  1.426  0.431  0.160 -0.320  0.452  1.328 -0.904 -0.958 -1.520</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G60   1.082 -0.736 -1.332  0.015  1.391 -0.110 -0.013 -1.262  0.465 -0.736</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G61   1.427 -0.367  0.627  0.591  1.228 -1.538  0.508 -0.169 -0.425 -0.234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G62   0.300  0.760  0.120 -0.497 -1.145 -0.306  2.005  1.075 -0.231  0.860</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G63  -0.346 -0.716  1.735  1.767  0.371 -1.787  0.586 -0.818  0.271 -1.309</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G64   1.273  0.281 -1.360 -0.969 -0.066 -1.699  0.033  0.856 -1.091 -3.196</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G65  -1.330 -1.776  0.273 -0.307  0.285 -0.774 -1.035  0.677 -0.622  0.151</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G66  -0.644  0.230  1.594 -1.765 -0.077  1.174  0.340  0.349 -0.296 -0.087</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G67  -0.482  1.387 -0.473  1.325  1.516  1.227 -2.327  1.980  0.500  0.261</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G68  -2.509 -2.775  0.610 -1.045  0.512 -0.134  0.560  0.448 -0.196  0.404</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G69   0.544 -1.862  0.208 -1.716 -1.279 -1.584 -0.212 -0.739  2.239  0.105</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G70   0.166  0.735  0.779  0.476 -1.230 -2.219 -0.393  0.151  0.004  0.925</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G71   1.135 -2.116  0.472  1.198  1.071 -1.811 -0.892 -1.363 -0.446  0.968</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G72  -0.837 -0.718  0.630 -2.682  1.262 -0.370 -1.228 -1.509  0.820 -0.277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G73  -0.021 -1.573  1.380  0.139 -0.225 -0.682  1.436 -1.210 -0.917  0.913</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G74  -0.675 -0.672 -1.777 -0.676 -0.073  0.451  0.365 -0.446  0.504 -0.613</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G75   1.197 -0.752  1.143 -0.505  1.281  2.091 -0.377 -0.887 -0.766  0.667</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G76  -1.030 -0.738  1.554 -0.127  0.330 -1.828  1.922  1.843 -1.229 -0.821</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G77   0.844 -0.710 -0.721  0.680  0.143 -0.055 -0.957  0.305  1.032  2.008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G78  -1.051 -0.524  0.240  1.237 -0.512 -0.445 -1.537  1.804  0.830 -0.397</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G79  -1.261 -0.784 -1.930 -0.604 -0.160 -1.650 -2.072  1.154  1.350  0.174</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G80   0.464  0.852  0.891 -0.656  0.011  1.789 -0.334 -1.849  0.216  0.867</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G81   0.286 -2.891 -0.443  1.388 -1.359  1.112 -0.792  0.134  0.569  1.883</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G82  -1.480 -1.842 -0.495 -0.837  1.549 -0.001 -1.807 -0.781  0.349  0.130</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G83  -1.152 -2.078  0.314  0.543  0.080 -0.688  0.835 -0.308  0.774 -0.253</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G84  -1.269  0.820 -0.849 -2.071 -0.341  1.031  1.097  1.157 -0.445  0.123</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G85  -1.977 -0.186 -1.812  0.113 -0.707 -0.340 -0.052  2.100  1.403 -0.251</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G86   0.282  0.962  1.306 -1.346 -0.084 -0.125 -0.213  1.197  0.018 -1.157</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G87  -0.067 -0.083  1.107 -1.084  1.663 -0.108 -0.390 -0.142  0.657 -1.452</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G88   1.069  0.594  0.506 -0.247  0.098 -0.014 -1.394 -1.082 -0.131 -0.987</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G89  -0.748 -1.365 -0.022  0.879 -0.257  0.506 -1.876 -1.188  0.551 -1.809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G90  -0.265 -0.090  1.444  1.235 -0.502 -0.429 -0.241  1.570 -0.386  0.217</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G91   2.332  0.560 -0.607 -2.673 -0.173  1.575 -0.466  1.065  0.007 -0.626</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G92  -1.459 -1.679 -0.098  1.008 -0.465 -0.883 -1.014 -0.962 -0.910 -2.220</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G93   0.168 -0.309  1.432 -0.174 -0.507  2.074 -0.023  0.408 -0.258  0.618</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G94   0.227  1.225  0.116 -1.190  0.893  1.513  1.365  0.268 -1.092  1.045</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G95   0.090 -0.231  0.488 -1.107  1.494  0.067  1.511  0.549 -0.945  1.529</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G96  -0.764  0.927 -1.102  0.819  0.115  0.171 -1.406  0.249  0.872 -0.033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G97   0.422 -0.468 -0.989  0.316  0.352  2.293 -0.759 -1.692 -0.146  0.292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G98  -1.464  1.291  1.682 -0.356 -0.574 -0.944  1.018 -0.892  0.962  1.187</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G99  -0.399  0.013 -0.339  0.836  0.746  0.520  0.393 -0.585  0.386  1.131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> G100  0.714  0.551 -0.782 -2.210  0.918 -0.620  1.171 -0.340  0.506 -1.084</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"desc")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "Gene1"   "Gene2"   "Gene3"   "Gene4"   "Gene5"   "Gene6"   "Gene7"  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [8] "Gene8"   "Gene9"   "Gene10"  "Gene11"  "Gene12"  "Gene13"  "Gene14" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [15] "Gene15"  "Gene16"  "Gene17"  "Gene18"  "Gene19"  "Gene20"  "Gene21" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [22] "Gene22"  "Gene23"  "Gene24"  "Gene25"  "Gene26"  "Gene27"  "Gene28" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [29] "Gene29"  "Gene30"  "Gene31"  "Gene32"  "Gene33"  "Gene34"  "Gene35" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [36] "Gene36"  "Gene37"  "Gene38"  "Gene39"  "Gene40"  "Gene41"  "Gene42" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [43] "Gene43"  "Gene44"  "Gene45"  "Gene46"  "Gene47"  "Gene48"  "Gene49" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [50] "Gene50"  "Gene51"  "Gene52"  "Gene53"  "Gene54"  "Gene55"  "Gene56" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [57] "Gene57"  "Gene58"  "Gene59"  "Gene60"  "Gene61"  "Gene62"  "Gene63" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [64] "Gene64"  "Gene65"  "Gene66"  "Gene67"  "Gene68"  "Gene69"  "Gene70" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [71] "Gene71"  "Gene72"  "Gene73"  "Gene74"  "Gene75"  "Gene76"  "Gene77" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [78] "Gene78"  "Gene79"  "Gene80"  "Gene81"  "Gene82"  "Gene83"  "Gene84" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [85] "Gene85"  "Gene86"  "Gene87"  "Gene88"  "Gene89"  "Gene90"  "Gene91" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [92] "Gene92"  "Gene93"  "Gene94"  "Gene95"  "Gene96"  "Gene97"  "Gene98" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [99] "Gene99"  "Gene100"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "GctMatrix" "matrix"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Use `gctDesc` to fetch feature descriptions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- Use `rownames` and `colnames` to fetch row and column names</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -- All methods applicable to matrix can be used</span>
 </code></pre></div>
     </div>
   </div>
