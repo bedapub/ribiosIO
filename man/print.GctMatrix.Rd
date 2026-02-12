@@ -13,6 +13,9 @@
 
 \item{...}{Paramters passed to the default method of \code{print}}
 }
+\value{
+No return value, called for side effects (prints to console).
+}
 \description{
 Print method for GctMatrix object
 }
@@ -24,5 +27,5 @@ mBig <- matrix(round(rnorm(1000),3),
    nrow=100, dimnames=list(sprintf("G\%d", 1:100), sprintf("S\%d", 1:10)))
 gmBig <- GctMatrix(mBig, desc=sprintf("Gene\%d", 1:100))
 gmBig
-\dontrun{print(gmBig, showAll=TRUE)}
+\donttest{print(gmBig, showAll=TRUE)}
 }

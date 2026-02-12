@@ -13,6 +13,9 @@ writeMatrix(x, file, row.names = TRUE)
 
 \item{row.names}{logical, whether row.names is appended. Default: \code{TRUE}}
 }
+\value{
+No return value, called for side effects (writes to file).
+}
 \description{
 \code{writeMatrix} writes a matrix into a non-quoted, tab-delimited file.
 }

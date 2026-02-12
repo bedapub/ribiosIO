@@ -6,24 +6,21 @@
 #' 
 #' @param rDataFile Character, RData file name
 #' @param env Environment, where should be the RData loaded into. By default it
-#' is loaded into the global environment.
-#' @return The function is used for its side effects.
+#' is loaded into the caller's environment.
+#' @return Logical, \code{TRUE} if the file was loaded successfully,
+#' \code{FALSE} otherwise.
 #' @author Jitao David Zhang <jitao_david.zhang@@roche.com>
 #' @seealso \code{\link{iofile}} can be used to find file from input data
 #' directory.
 #' @examples
-#' 
-#' \dontrun{
 #' rf <- tempfile()
 #' myData <- c(3,4,5)
 #' save(myData, file=rf)
-#' if(!loadFile(rf)) {
-#' stop("Something went wrong\n")
-#' }
-#' }
-#' 
+#' env <- new.env()
+#' stopifnot(loadFile(rf, env=env))
+#'
 #' @export loadFile
-loadFile <- function (rDataFile, env = globalenv()) {
+loadFile <- function (rDataFile, env = parent.frame()) {
     if (file.exists(rDataFile)) {
         load(rDataFile, env)
         return(TRUE)
@@ -38,6 +35,8 @@ loadFile <- function (rDataFile, env = globalenv()) {
 #' @param obj Object name. If set as \code{NULL}, all objects are returned
 #' @param verbose Whether the loading process should be verbose, see \code{\link{load}}
 #'
+#' @return The object loaded from the RData file. If \code{obj} is \code{NULL},
+#' returns the first object found.
 #' @export
 loadObject <- function(file, obj=NULL, verbose=FALSE) {
   env <- new.env()
@@ -53,6 +52,7 @@ loadObject <- function(file, obj=NULL, verbose=FALSE) {
 #' @param obj Character string(s), optional object names. If set as \code{NULL}, all objects are returned
 #' @param verbose Whether the loading process should be verbose, see \code{\link{load}}
 #'
+#' @return An environment containing the loaded objects.
 #' @export
 loadObjectInEnv <- function(file, obj=NULL, verbose=FALSE) {
   env <- new.env()

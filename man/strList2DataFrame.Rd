@@ -13,6 +13,10 @@ strList2DataFrame(strList, colnames = names(strList), index = FALSE)
 
 \item{index}{Logical value, whether the row.names attribute of the data.frame should be integer indexes}
 }
+\value{
+A character matrix with list elements as columns, padded with
+empty strings to equal length.
+}
 \description{
 Format a string list into a data.frame
 }

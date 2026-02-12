@@ -9,7 +9,7 @@
 #' @param x a matrix
 #' @param file file to be written to
 #' @param row.names logical, whether row.names is appended. Default: \code{TRUE}
-#' @return NULL
+#' @return No return value, called for side effects (writes to file).
 #' @seealso \code{\link{readMatrix}} to read in matrix
 #' @examples
 #' test.mat <- matrix(rnorm(1000), nrow=10)

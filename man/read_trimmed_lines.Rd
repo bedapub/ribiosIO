@@ -13,6 +13,9 @@ read_trimmed_lines(file, skipNul = TRUE, ...)
 
 \item{...}{Other paratmers than \code{skipNul} passed to readLines}
 }
+\value{
+Character vector of trimmed, non-empty lines.
+}
 \description{
 Read lines, thereby trimming empty spaces around the strings and removing empty lines
 }

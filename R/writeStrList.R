@@ -4,6 +4,8 @@
 #' @param colnames Column names of the resulting data.frame, by default the names of the list
 #' @param index Logical value, whether the row.names attribute of the data.frame should be integer indexes
 #'
+#' @return A character matrix with list elements as columns, padded with
+#' empty strings to equal length.
 #' @examples
 #' myList <- list("A"=LETTERS[3:5], "B"=LETTERS[4])
 #' strList2DataFrame(myList)
@@ -39,6 +41,7 @@ strList2DataFrame <- function(strList, colnames=names(strList), index=FALSE) {
 #' @param type Should list items written in columns or rows?
 #' @param index Logical, should integer index be printed along the elements?
 #'
+#' @return No return value, called for side effects (writes to file).
 #' @examples
 #' myList <- list("A"=LETTERS[3:5], "B"=LETTERS[4])
 #' writeStrList(myList, file=stdout())

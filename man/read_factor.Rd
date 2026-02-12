@@ -14,6 +14,9 @@ read_cls(con = stdin(), offset = 0)
 
 \item{offset}{The integer representing the first level, default is set to 0, for some software it can be set to 1}
 }
+\value{
+A factor with levels as defined in the CLS file.
+}
 \description{
 Read in a factor writtin in the CLS format
 }

@@ -16,6 +16,9 @@ Other types will be converted to characters.}
 
 \item{...}{Other parameters passed to matrix subsetting}
 }
+\value{
+A \code{GctMatrix} object, subsetted according to the given indices.
+}
 \description{
 Subsetting for GctMatrix
 }

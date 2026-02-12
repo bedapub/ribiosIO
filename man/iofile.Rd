@@ -34,6 +34,10 @@ their full names. When \code{x} is missing or \code{NULL}, \code{iofile()}
 returns the value of \code{dataDir}. A common usage for the later case is 
 \code{dir(iofile())}.}
 }
+\value{
+Character string, the full path to the data directory (when \code{x}
+is \code{NULL}) or the full file path(s) within the data directory.
+}
 \description{
 Get file names for data import/export
 }

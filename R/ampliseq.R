@@ -124,7 +124,8 @@ read_annotated_ampliseq_amplicons <- function(bedFile) {
 #' }
 #' @param bedFile Character string, the output file
 #' @param version Character string, a version number. By default, the current date is used.
-#' 
+#'
+#' @return No return value, called for side effects (writes an annotated BED file).
 #' @importFrom utils write.table
 #' @seealso \code{\link{read_annotated_ampliseq_amplicons}}
 #' @examples 

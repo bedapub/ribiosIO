@@ -25,6 +25,9 @@ write_annotated_ampliseq_amplicons(
 
 \item{version}{Character string, a version number. By default, the current date is used.}
 }
+\value{
+No return value, called for side effects (writes an annotated BED file).
+}
 \description{
 Write AmpliSeq amplicon informaiton into an annotated BED file
 }

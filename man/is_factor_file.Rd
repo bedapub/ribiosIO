@@ -12,6 +12,10 @@ is_cls_file(con = stdin())
 \arguments{
 \item{con}{Connection from which to read the file}
 }
+\value{
+Logical, \code{TRUE} if the file is a valid CLS factor file,
+\code{FALSE} otherwise.
+}
 \description{
 Check if a file encodes a factor
 }

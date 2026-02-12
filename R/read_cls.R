@@ -12,6 +12,7 @@
 #' CLS format for these factors, we propose using tab as separators in CLS files when encoding factors
 #' in R. The default setting of \code{read_factor} and \code{write_factor} uses tab.
 #'
+#' @return No return value, called for side effects (writes to connection).
 #' @seealso \code{\link{read_factor}}
 #'
 #' @examples
@@ -52,8 +53,9 @@ write_cls <- write_factor
 #' in R. The default setting of \code{read_factor} and \code{write_factor} uses tab. Though \code{read_factor}
 #' can handle both separators, as long as in the file a separator is consistenly used.
 #'
+#' @return A factor with levels as defined in the CLS file.
 #' @seealso \code{\link{write_factor}}
-#' 
+#'
 #' @examples
 #' set.seed(1887)
 #' tempfac <- factor(sample(LETTERS, 30, replace=TRUE), levels=sample(LETTERS))
@@ -69,7 +71,7 @@ write_cls <- write_factor
 #' expFac <- factor(c("Case", "Control")[c(1,0,1,0,0,1,0,0,0,1,0,1,0,0,0,1,0,1,0,0,1,1,1,1,0,0)+1],
 #' levels=c("Case", "Control"))
 #' stopifnot(identical(sample.cls, expFac))
-#' 
+#'
 #' @export
 read_factor <- function(con=stdin(), offset=0) {
     lns <- readLines(con)
@@ -101,7 +103,9 @@ read_cls <- read_factor
 #' @aliases is_cls_file
 #' 
 #' @param con Connection from which to read the file
-#' 
+#'
+#' @return Logical, \code{TRUE} if the file is a valid CLS factor file,
+#' \code{FALSE} otherwise.
 #' @examples
 #' set.seed(1887)
 #' tempfac <- factor(sample(LETTERS, 30, replace=TRUE), levels=sample(LETTERS))

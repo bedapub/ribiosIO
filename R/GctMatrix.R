@@ -55,7 +55,8 @@ as.matrix.GctMatrix <- function(x, ...) {
 #' @param x A GctMatrix object
 #' @param showAll Logical, whether all values should be printed
 #' @param ... Paramters passed to the default method of \code{print}
-#' @examples 
+#' @return No return value, called for side effects (prints to console).
+#' @examples
 #' m1 <- matrix(1:6, nrow=3, dimnames=list(sprintf("G%d", 1:3), sprintf("S%d", 1:2)))
 #' gm1 <- GctMatrix(m1, desc=sprintf("Gene%d", 1:3))
 #' gm1
@@ -63,7 +64,7 @@ as.matrix.GctMatrix <- function(x, ...) {
 #'    nrow=100, dimnames=list(sprintf("G%d", 1:100), sprintf("S%d", 1:10)))
 #' gmBig <- GctMatrix(mBig, desc=sprintf("Gene%d", 1:100))
 #' gmBig
-#' \dontrun{print(gmBig, showAll=TRUE)}
+#' \donttest{print(gmBig, showAll=TRUE)}
 #' @export
 print.GctMatrix <- function(x, showAll=FALSE, ...) {
   cat(sprintf("A GctMatrix with %d features and %d samples.\n",
@@ -101,7 +102,8 @@ print.GctMatrix <- function(x, showAll=FALSE, ...) {
 #'   Other types will be converted to characters.
 #' @param j Index to subset columns.
 #' @param ... Other parameters passed to matrix subsetting
-#' 
+#'
+#' @return A \code{GctMatrix} object, subsetted according to the given indices.
 #' @examples 
 #' m1 <- matrix(1:6, nrow=3, dimnames=list(sprintf("G%d", 1:3), sprintf("S%d", 1:2)))
 #' gm1 <- GctMatrix(m1, desc=sprintf("Gene%d", 1:3))

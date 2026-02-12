@@ -15,20 +15,19 @@ used. Must be of the same length as the list}
 \item{\dots}{Other parameters that are passed to \code{\link{write.table}}}
 }
 \value{
-Side-effects are used
+No return value, called for side effects (writes files).
 }
 \description{
 Write a list of data.frames (tables) into files
 }
 \examples{
-
-\dontrun{
 df1 <- data.frame(name=c("A", "B", "C"), value=1:3)
 df2 <- data.frame(name=c("C", "D", "E"), value=seq(9,3,-3))
 dflist <- list(file1=df1, file2=df2)
-write.tableList(dflist) ## two files, file1 and file2, are written
-write.tableList(dflist, file.names=c("file1.txt", "file2.txt")) ## two
-files, file1.txt and file2.txt, are written
+\donttest{
+tmpdir <- tempdir()
+write.tableList(dflist,
+  file.names=file.path(tmpdir, c("file1.txt", "file2.txt")))
 }
 
 }
