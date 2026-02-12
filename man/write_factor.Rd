@@ -18,6 +18,9 @@ write_cls(fac, con = stdout(), offset = 0, sep = c("\\t", " "))
 
 \item{sep}{Separator used in the CLS format, can be '\\t' (recommended) or ' ' (not to be used when space exists in levels)}
 }
+\value{
+No return value, called for side effects (writes to connection).
+}
 \description{
 Write a factor in the CLS format
 }

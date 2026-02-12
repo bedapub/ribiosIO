@@ -45,6 +45,8 @@ setDataDir <- function(path) {
 #' returns the value of \code{dataDir}. A common usage for the later case is 
 #' \code{dir(iofile())}.
 #'
+#' @return Character string, the full path to the data directory (when \code{x}
+#' is \code{NULL}) or the full file path(s) within the data directory.
 #' @examples
 #' setDataDir(system.file("extdata", package="ribiosIO"))
 #' dir(iofile())

@@ -13,6 +13,9 @@ loadObjectInEnv(file, obj = NULL, verbose = FALSE)
 
 \item{verbose}{Whether the loading process should be verbose, see \code{\link{load}}}
 }
+\value{
+An environment containing the loaded objects.
+}
 \description{
 Load objects from a RData file and return them in an environment
 }

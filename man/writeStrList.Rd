@@ -23,6 +23,9 @@ writeStrList(
 
 \item{index}{Logical, should integer index be printed along the elements?}
 }
+\value{
+No return value, called for side effects (writes to file).
+}
 \description{
 Write a list of strings in a tab-delimited file
 }

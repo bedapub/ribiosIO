@@ -1,6 +1,8 @@
+#' @keywords internal
+"_PACKAGE"
+
 #' High-performance file input/output with ribios
-#' @docType package
-#' @description Provides high-performance file input/output for computational biology tasks
+#' @description Provides high-performance file input/output for bioinformatics and computational biology tasks
 #' @useDynLib ribiosIO, .registration=TRUE, .fixes="C_"
 #' @name ribiosIO-package
 NULL

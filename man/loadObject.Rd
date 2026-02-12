@@ -13,6 +13,10 @@ loadObject(file, obj = NULL, verbose = FALSE)
 
 \item{verbose}{Whether the loading process should be verbose, see \code{\link{load}}}
 }
+\value{
+The object loaded from the RData file. If \code{obj} is \code{NULL},
+returns the first object found.
+}
 \description{
 Load an object by its name from a RData file
 }

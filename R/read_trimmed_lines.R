@@ -2,7 +2,8 @@
 #' @param file A text file
 #' @param skipNul Skip NULL line (passed to \code{readLines})
 #' @param ... Other paratmers than \code{skipNul} passed to readLines
-#' 
+#'
+#' @return Character vector of trimmed, non-empty lines.
 #' @examples
 #' lines <- "  ABC \n\tHBV\n\nFCB  \n\n"
 #' trimmedLines <- read_trimmed_lines(textConnection(lines))
