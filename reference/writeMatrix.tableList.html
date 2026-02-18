@@ -102,16 +102,16 @@ unnamed column of the output files</p></dd>
 <span class="r-in"><span><span class="va">dflist</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>file1<span class="op">=</span><span class="va">df1</span>, file2<span class="op">=</span><span class="va">df2</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">writeMatrix.tableList</span><span class="op">(</span><span class="va">dflist</span><span class="op">)</span> <span class="co">## two files, file1 and file2, are written</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "downlit"          "file1"            "file1.txt"        "file2"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file2.txt"        "file274d13d26e60" "file274d20d3437e" "file274d40d4a346"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file274d42ff272e" "file274d48fb12e3" "file274d6995c58"  "file274d7969edca"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "file274d7dd6c9f2" "file274dbf4fb6b" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "downlit"          "file1"            "file1.txt"        "file17eb15985069"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file17eb2146b603" "file17eb33b08f1e" "file17eb3d3de0b6" "file17eb4fd42357"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file17eb5ea4bbc1" "file17eb69d4bf5e" "file17eb6ee1c19b" "file17eb777f0a31"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "file2"            "file2.txt"       </span>
 <span class="r-in"><span><span class="fu">writeMatrix.tableList</span><span class="op">(</span><span class="va">dflist</span>, file.names<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"file1.txt"</span>, <span class="st">"file2.txt"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "downlit"          "file1"            "file1.txt"        "file2"           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file2.txt"        "file274d13d26e60" "file274d20d3437e" "file274d40d4a346"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file274d42ff272e" "file274d48fb12e3" "file274d6995c58"  "file274d7969edca"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "file274d7dd6c9f2" "file274dbf4fb6b" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "downlit"          "file1"            "file1.txt"        "file17eb15985069"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "file17eb2146b603" "file17eb33b08f1e" "file17eb3d3de0b6" "file17eb4fd42357"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "file17eb5ea4bbc1" "file17eb69d4bf5e" "file17eb6ee1c19b" "file17eb777f0a31"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "file2"            "file2.txt"       </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">setwd</a></span><span class="op">(</span><span class="va">cwd</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
