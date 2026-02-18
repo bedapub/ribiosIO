@@ -23,6 +23,7 @@ Useful links:
 
 Other contributors:
 \itemize{
+  \item Balazs Banfai [contributor]
   \item F.Hoffmann-La Roche AG [copyright holder]
 }
 
