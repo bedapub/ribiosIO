@@ -8,7 +8,8 @@ Authors@R:
            family = "Zhang",
            role = c("aut", "cre", "ctb"),
            email = "jitao_david.zhang@roche.com",
-           comment = c(ORCID="0000-0002-3085-0909")))
+           comment = c(ORCID="0000-0002-3085-0909")),
+    person("F.Hoffmann-La Roche AG", role="cph"))
 Description: Provides data structures and functions for file input/output in the 'ribios' software suite, supporting common bioinformatics and computational biology file formats, designed for fast loading and high performance with minimal dependencies.
 Depends:
     R (>= 3.4.0)
